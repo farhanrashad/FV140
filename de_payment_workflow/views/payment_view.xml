@@ -56,8 +56,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//footer" position="replace">
                     <footer>
-<!--	                    <button string='Validate' name="action_validate_invoice_payment" type="object"-->
-<!--	                        class="btn-primary" attrs="{'invisible': [('payment_type', '=', 'outbound')]}"/>-->
+	                    <button string='Validate' name="action_create_payments" type="object"
+	                        class="btn-primary" attrs="{'invisible': [('payment_type', '=', 'outbound')]}"/>
 	                    <button string='Validate' name="action_create_payments" type="object"
 	                        class="btn-primary" attrs="{'invisible': [('payment_type', '!=', 'outbound')]}"/>
 	                    <button string="Cancel" class="btn-default" special="cancel"/>
