@@ -5,7 +5,7 @@
             <field name="name">inherit.payment.workflow.form.view</field>
             <field name="model">account.payment</field>
             <field name="inherit_id" ref="account.view_account_payment_form"/>
-<!--&lt;!&ndash;            <field name="groups" eval="[(4, ref('account.group_account_user'))]"/>&ndash;&gt;-->
+            <field name="groups" eval="[(4, ref('account.group_account_user'))]"/>
 <!--            <field name = "perm_read" eval = "True" />-->
 <!--            <field name = "perm_write" eval = "False" />-->
 <!--            <field name = "perm_create" eval = "False" />-->
@@ -14,7 +14,7 @@
 <!--&lt;!&ndash;            <field eval="0" name="perm_write"/>&ndash;&gt;-->
 <!--&lt;!&ndash;            <field eval="1" name="perm_read"/>&ndash;&gt;-->
 <!--&lt;!&ndash;            <field eval="0" name="perm_create"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="domain_force">[('state', '!=', 'draft'])]</field>&ndash;&gt;-->
+            <field name="domain_force">[('state', '!=', 'draft'])]</field>
             <field name="arch" type="xml">
                 <xpath expr="/form/header/button[@name='post']" position="after">
                     <button name="submit_payment" class="oe_highlight" states="draft" string="Submit" groups="de_payment_workflow.group_submit_payment" type="object"/>
