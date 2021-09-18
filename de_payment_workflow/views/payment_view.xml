@@ -10,7 +10,7 @@
 <!--            <field eval="0" name="perm_write"/>-->
 <!--            <field eval="1" name="perm_read"/>-->
 <!--            <field eval="0" name="perm_create"/>-->
-            <field name="domain_force">[('state', '!=', 'draft'])]</field>
+<!--            <field name="domain_force">[('state', '!=', 'draft'])]</field>-->
             <field name="arch" type="xml">
                 <xpath expr="/form/header/button[@name='post']" position="after">
                     <button name="submit_payment" class="oe_highlight" states="draft" string="Submit" groups="de_payment_workflow.group_submit_payment" type="object"/>
