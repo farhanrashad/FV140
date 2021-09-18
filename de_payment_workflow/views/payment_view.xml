@@ -6,6 +6,10 @@
             <field name="model">account.payment</field>
             <field name="inherit_id" ref="account.view_account_payment_form"/>
 <!--            <field name="groups" eval="[(4, ref('account.group_account_user'))]"/>-->
+            <field name = "perm_read" eval = "True" />
+            <field name = "perm_write" eval = "False" />
+            <field name = "perm_create" eval = "False" />
+            <field name = "perm_unlink" eval = "False" />
 <!--            <field eval="0" name="perm_unlink"/>-->
 <!--            <field eval="0" name="perm_write"/>-->
 <!--            <field eval="1" name="perm_read"/>-->
