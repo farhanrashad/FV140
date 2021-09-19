@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
 <odoo>
     <data>
         <!-- Payment State Form View -->
@@ -40,6 +40,6 @@
             </field>
         </record>
         <!-- Menu Item -->
-        <menuitem id="payment_state_menu" name="Payment State" parent="account.root_payment_menu" action="payment_state_action" sequence="850"/>
+        <menuitem id="payment_state_menu" name="" parent="account.root_payment_menu" action="payment_state_action" sequence="20"/>
     </data>
 </odoo>
