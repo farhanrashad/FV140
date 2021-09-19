@@ -9,7 +9,7 @@
             <field name = "perm_write" eval = "False" />
             <field name = "perm_create" eval = "False" />
             <field name = "perm_unlink" eval = "False" />
-           <field name = "domain_force"> [('state', '!=', 'draft'])] </field>
+           <field name = "domain_force"> [('state', '!=', 'draft')] </field>
         </record>
         
         <record id="inherit_payment_workflow_form_view" model="ir.ui.view">
