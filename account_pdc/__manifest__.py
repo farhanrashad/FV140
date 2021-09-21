@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'PDC Management',
-    'version': '11.0.1.1',
+    'version': '12.0.1.0',
     'author': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'website': 'http://www.cybrosys.com',
@@ -32,7 +32,7 @@
         'views/account_payment_view.xml',
     ],
     'images': ['static/description/pdc_banner.jpg'],
-    'license': 'LGPL-3',
+    'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
 }
