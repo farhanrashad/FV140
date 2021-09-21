@@ -29,6 +29,7 @@
                              'account',
                             ],
   "data"                 :  [
+                            'security/ir.model.access.csv',
                             'views/payment_state_view.xml',
                             'views/payment_view.xml',
                             'views/payment_group_view.xml'
