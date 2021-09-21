@@ -129,7 +129,7 @@
             <field name="name">Employee Advance Salary</field>
             <field name="res_model">employee.advance.salary</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
         </record>
         
         <record model="ir.actions.act_window" id="action_employee_advance_salary_account">
@@ -137,7 +137,7 @@
             <field name="res_model">employee.advance.salary</field>
             <field name="domain">[('state', 'in', ['done', 'paid', 'approved_director'])]</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
         </record>
         
         <record model="ir.actions.act_window" id="action_department_approval">
@@ -145,7 +145,7 @@
             <field name="res_model">employee.advance.salary</field>
             <field name="domain">[('state', 'in', ['confirm'])]</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
         </record>
         
         <record model="ir.actions.act_window" id="action_hr_approval">
@@ -153,7 +153,7 @@
             <field name="res_model">employee.advance.salary</field>
             <field name="domain">[('state', 'in', ['approved_dept_manager'])]</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
         </record>
         
         <record model="ir.actions.act_window" id="action_director_approval">
@@ -161,7 +161,7 @@
             <field name="res_model">employee.advance.salary</field>
             <field name="domain">[('state', 'in', ['approved_hr_manager'])]</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
         </record>
         
         <menuitem name="Advance Salary" parent="hr.menu_hr_root" id="menu_advance_salary" sequence="7" />
