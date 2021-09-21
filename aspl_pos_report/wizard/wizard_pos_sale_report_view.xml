@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-<!--Z Report-->
         <record id="wizard_pos_sale_report_form_view" model="ir.ui.view">
             <field name="name">wizard.pos.sale.report.form.view</field>
             <field name="model">wizard.pos.sale.report</field>
