@@ -1,7 +1,5 @@
 <!--<?xml version="1.0" encoding="UTF-8"?>-->
 <odoo>
-    <data>
-        
         <record id="view_hr_job_form_inherit_salary_limit" model="ir.ui.view">
             <field name="name">hr.job</field>
             <field name="model">hr.job</field>
@@ -12,6 +10,4 @@
                 </xpath>
             </field>
         </record>
-        
-    </data>
 </odoo>
