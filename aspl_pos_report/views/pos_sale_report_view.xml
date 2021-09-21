@@ -4,7 +4,7 @@
         <field name="name">Z Report</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wizard.pos.sale.report</field>
-        <field name="view_id" ref="wizard_pos_sale_report_form_view"/>
+<!--        <field name="view_id" ref="wizard_pos_sale_report_form_view"/>-->
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>

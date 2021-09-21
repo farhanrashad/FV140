@@ -4,7 +4,7 @@
         <field name="name">Sales Summary</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wizard.sales.details</field>
-        <field name="view_id" ref="wizard_sales_details_form_view"/>
+<!--        <field name="view_id" ref="wizard_sales_details_form_view"/>-->
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
