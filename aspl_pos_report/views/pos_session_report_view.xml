@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="action_wizard_pos_session_report" model="ir.actions.act_window">
-            <field name="name">Session Report</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">wizard.pos.session.report</field>
-<!--            <field name="view_type">form</field>-->
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record>
+        <field name="name">Session Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.pos.session.report</field>
+        <field name="view_id" ref="wizard_pos_session_report_form_view"/>
+        <field name="view_mode">form</field>
+    </record>
 
-        <menuitem action="action_wizard_pos_session_report" id="menu_print_pos_session_report"
-                  name="Session Report" parent="menu_main_print_pos_sale_report" sequence='4'/>
+    <menuitem action="action_wizard_pos_session_report" id="menu_print_pos_session_report"
+              name="Session Report" parent="menu_main_print_pos_sale_report" sequence='4'/>
 </odoo>
