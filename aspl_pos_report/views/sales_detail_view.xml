@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_wizard_sales_details" model="ir.actions.act_window">
+            <field name="name">Sales Summary</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.sales.details</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_wizard_sales_details" id="menu_print_sales_details"
+                  name="Sales Summary" parent="menu_main_print_pos_sale_report" sequence='3'/>
+</odoo>
