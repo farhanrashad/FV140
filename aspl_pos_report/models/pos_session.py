@@ -249,7 +249,7 @@ class pos_session(models.Model):
     def get_company_data_x(self):
         return self.user_id.company_id
     
-    # @api.multi
+    @api.multi
     def get_current_date_x(self):
         if self._context and self._context.get('tz'):
             tz = self._context['tz']
