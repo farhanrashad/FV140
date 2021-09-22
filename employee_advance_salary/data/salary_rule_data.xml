@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+<!--    <data noupdate="1">-->
         <!--Salary rule for advance salary amount deduction-->
         <record id="hr_salary_rule_advance_salary" model="hr.salary.rule">
             <field name="code">ADVANCSAL</field>
@@ -10,5 +10,5 @@
             <field name="amount_python_compute">result = -(employee.get_advance_salary(employee.id, payslip.date_from, payslip.date_to))</field>
             <field name="sequence" eval="150"/>
         </record>
-    </data>
+<!--    </data>-->
 </odoo>
