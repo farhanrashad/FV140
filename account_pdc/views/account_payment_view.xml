@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_post']" position="before">
                     <button name="print_checks" class="oe_highlight" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['check_printing','pdc']), ('state', '!=', 'posted')]}" string="Print Check" type="object"/>
-                    <button name="unmark_sent" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['check_printing','pdc']), ('state', '!=', 'sent')]}" string="Unmark Sent" type="object"/>
+                    <button name="unmark_as_sent" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['check_printing','pdc']), ('state', '!=', 'sent')]}" string="Unmark Sent" type="object"/>
                 </xpath>
                 <xpath expr="//div[@name='amount_div']" position="after">
                     <field name="check_amount_in_words" attrs="{'invisible': [('payment_method_code', 'not in', ['check_printing','pdc'])], 'readonly': [('state', '!=', 'draft')]}" groups="base.group_no_one"/>
