@@ -104,24 +104,24 @@
         </field>
     </record>
 
-<!--&lt;!&ndash;        <record id="employee_advance_salary_view_search" model="ir.ui.view">&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="name">employee.advance.salary.view.search</field>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="model">employee.advance.salary</field>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="arch" type="xml">&ndash;&gt;-->
-<!--&lt;!&ndash;                <search string="Employee Advance Salary" >&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="employee_id"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="department_id" />&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="job_id" />&ndash;&gt;-->
-<!--&lt;!&ndash;                    <field name="state" />&ndash;&gt;-->
-<!--&lt;!&ndash;                    <group expand="0" string="Group By">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <filter string="Job" domain="[]" context="{'group_by':'job_id'}"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <filter string="Request Date" domain="[]" context="{'group_by':'request_date'}"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </group>&ndash;&gt;-->
-<!--&lt;!&ndash;                </search>&ndash;&gt;-->
-<!--&lt;!&ndash;            </field>&ndash;&gt;-->
-<!--&lt;!&ndash;        </record>&ndash;&gt;-->
+    <record id="employee_advance_salary_view_search" model="ir.ui.view">
+        <field name="name">employee.advance.salary.view.search</field>
+        <field name="model">employee.advance.salary</field>
+        <field name="arch" type="xml">
+            <search string="Employee Advance Salary" >
+                <field name="employee_id"/>
+                <field name="department_id" />
+                <field name="job_id" />
+                <field name="state" />
+                <group expand="0" string="Group By">
+                    <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                    <filter string="Job" domain="[]" context="{'group_by':'job_id'}"/>
+                    <filter string="Request Date" domain="[]" context="{'group_by':'request_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="action_employee_advance_salary">
         <field name="name">Employee Advance Salary</field>
