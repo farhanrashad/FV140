@@ -6,11 +6,11 @@ from odoo import models, api, _
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
-    # @api.one
-    # @api.depends('outbound_payment_method_ids')
-    # def _compute_check_printing_payment_method_selected(self):
-    #     self.check_printing_payment_method_selected = any(
-    #         pm.code in ['check_printing', 'pdc'] for pm in self.outbound_payment_method_ids)
+    @api.one
+    @api.depends('outbound_payment_method_ids')
+    def _compute_check_printing_payment_method_selected(self):
+        self.check_printing_payment_method_selected = any(
+            pm.code in ['check_printing', 'pdc'] for pm in self.outbound_payment_method_ids)
 
     @api.model
     def _enable_pdc_on_bank_journals(self):
