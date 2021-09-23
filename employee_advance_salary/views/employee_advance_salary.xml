@@ -105,7 +105,7 @@
     </record>
 
     <record id="employee_advance_salary_search_view" model="ir.ui.view">
-        <field name="name">employee.advance.salary.search.view</field>
+        <field name="name">	employee.advance.salary.tree.view</field>
         <field name="model">employee.advance.salary</field>
         <field name="arch" type="xml">
             <search string="Employee Advance Salary" >
