@@ -21,10 +21,10 @@ class AccountRegisterPayments(models.TransientModel):
         return res
 
 
-class AccountPaymentInherit(models.Model):
-    _inherit = "account.payment"
-
-    effective_date = fields.Date('Effective Date', help='Effective date of PDC', copy=False, default=False)
+# class AccountPaymentInherit(models.Model):
+#     _inherit = "account.payment"
+#
+#     effective_date = fields.Date('Effective Date', help='Effective date of PDC', copy=False, default=False)
 
 
 class AccountPayment(models.Model):
