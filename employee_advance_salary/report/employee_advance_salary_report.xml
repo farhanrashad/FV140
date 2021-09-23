@@ -3,13 +3,13 @@
 <!--    <data>-->
         
     <record
-        id="employee_advance_salary_report"
-        model="employee.advance.salary"
-        menu="True"
-        report_type="qweb-pdf"
-        string="Print Advance Salary"
-        name="employee_advance_salary.employee_advance_salary_id"
-        file="employee_advance_salary.employee_advance_salary_id"
+            id="employee_advance_salary_report"
+            model="employee.advance.salary"
+            menu="True"
+            report_type="qweb-pdf"
+            string="Print Advance Salary"
+            name="employee_advance_salary.employee_advance_salary_id"
+            file="employee_advance_salary.employee_advance_salary_id"
     />
     <template id="employee_advance_salary_id">
            <t t-foreach="docs" t-as="doc">

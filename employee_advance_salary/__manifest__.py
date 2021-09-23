@@ -47,7 +47,7 @@ payroll
     'images': ['static/description/img2.jpg'],
     'data': ['security/employee_advance_salary_security.xml',
              'security/ir.model.access.csv',
-              'data/salary_rule_data.xml',
+             'data/salary_rule_data.xml',
              'views/employee_advance_salary.xml',
              'views/hr_job.xml',
              'report/employee_advance_salary_report.xml'
