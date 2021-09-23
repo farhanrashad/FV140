@@ -6,7 +6,7 @@ from odoo import models, api, _
 class AccountJournal(models.Model):
     _inherit = "account.journal"
 
-    @api.one
+    # @api.one
     @api.depends('outbound_payment_method_ids')
     def _compute_check_printing_payment_method_selected(self):
         self.check_printing_payment_method_selected = any(
