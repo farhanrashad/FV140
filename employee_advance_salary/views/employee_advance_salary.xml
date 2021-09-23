@@ -1,5 +1,5 @@
-<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8"?>&ndash;&gt;-->
-<!--<odoo>-->
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
 <!--    <record id="employee_advance_salary_form_view" model="ir.ui.view">-->
 <!--        <field name="name">employee.advance.salary.form.view</field>-->
 <!--        <field name="model">employee.advance.salary</field>-->
@@ -168,4 +168,4 @@
 <!--    <menuitem name="HR Approvals" id="menu_hr_approval" action="action_hr_approval" groups="hr.group_hr_user" parent="menu_advance_salary" sequence="14" />-->
 <!--    <menuitem name="Director Approvals" id="menu_director_approval" action="action_director_approval" groups="employee_advance_salary.group_director_manager_for_salary_id" parent="menu_advance_salary" sequence="15" />-->
 <!--    <menuitem name="Advance Salary Requests" id="menu_advance_salary_request_account" action="action_employee_advance_salary_account" parent="account.menu_finance_payables" sequence="96" />-->
-<!--</odoo>-->
+</odoo>

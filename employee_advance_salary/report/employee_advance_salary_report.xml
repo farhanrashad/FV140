@@ -1,5 +1,5 @@
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<odoo>-->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
 <!--&lt;!&ndash;    <data>&ndash;&gt;-->
 <!--        -->
 <!--    <record-->
@@ -99,4 +99,4 @@
 <!--    </template>-->
 <!--        -->
 <!--&lt;!&ndash;    </data>&ndash;&gt;-->
-<!--</odoo>-->
+</odoo>
