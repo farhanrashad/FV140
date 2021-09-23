@@ -89,20 +89,20 @@
 <!--        </field>-->
 <!--    </record>-->
 
-<!--    <record id="employee_advance_salary_tree_view" model="ir.ui.view">-->
-<!--        <field name="name">employee.advance.salary.tree.view</field>-->
-<!--        <field name="model">employee.advance.salary</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--             <tree>-->
-<!--                    <field name="employee_id" />-->
-<!--                    <field name="request_amount" />-->
-<!--                    <field name="request_date" />-->
-<!--                    <field name="department_id" />-->
-<!--                    <field name="job_id" />-->
-<!--                    <field name="state" />-->
-<!--             </tree>-->
-<!--        </field>-->
-<!--    </record>-->
+    <record id="employee_advance_salary_tree_view" model="ir.ui.view">
+        <field name="name">employee.advance.salary.tree.view</field>
+        <field name="model">employee.advance.salary</field>
+        <field name="arch" type="xml">
+             <tree>
+                    <field name="employee_id" />
+                    <field name="request_amount" />
+                    <field name="request_date" />
+                    <field name="department_id" />
+                    <field name="job_id" />
+                    <field name="state" />
+             </tree>
+        </field>
+    </record>
 
 <!--&lt;!&ndash;        <record id="employee_advance_salary_view_search" model="ir.ui.view">&ndash;&gt;-->
 <!--&lt;!&ndash;            <field name="name">employee.advance.salary.view.search</field>&ndash;&gt;-->
