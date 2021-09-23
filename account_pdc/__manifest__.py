@@ -30,6 +30,7 @@
     'data': [
         'data/account_pdc_data.xml',
         'views/account_payment_view.xml',
+        'wizard/account_register_payment_wizard_view.xml',
     ],
     'images': ['static/description/pdc_banner.jpg'],
     'license': 'LGPL-3',
