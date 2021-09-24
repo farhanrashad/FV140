@@ -3,7 +3,7 @@
         <field name="name">mrp.production.workcenter.form.subcontracting.inherit</field>
         <field name="model">mrp.workorder</field>
         <field name="type">form</field>
-        <field name="inherit_id" ref="mrp.mrp_production_workcenter_form_view_inherit"/>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[4]/group/group" position='after'>
                 <group string="SubContracting">
