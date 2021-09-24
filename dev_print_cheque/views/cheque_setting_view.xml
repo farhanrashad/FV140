@@ -11,7 +11,7 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
         <field name="arch" type="xml">
             <form string="Cheque Format">
                 <sheet>
-                    <label string="Cheque Name" class="oe_edit"/>
+                    <label for="name" string="Cheque Name" class="oe_edit"/>
                     <h1><field name="name"/></h1>
                     <group>
                         <group>
