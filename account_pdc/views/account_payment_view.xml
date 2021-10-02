@@ -24,25 +24,25 @@
             </field>
         </record>
 
-        <record id="account_check_printing.view_account_payment_invoice_form_inherited" model="ir.ui.view">
-            <field name="name">account.payment.invoice.form.inherited</field>
-            <field name="model">account.payment</field>
-            <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
-            <field name="arch" type="xml">
-                <xpath expr="//div[@name='amount_div']" position="after">
-                    <field name="check_amount_in_words" attrs="{'invisible': [('payment_method_code', 'not in', ['check_printing','pdc'])]}" groups="base.group_no_one"/>
-                </xpath>
-                <xpath expr="//field[@name='communication']" position="after">
-                    <field name="check_manual_sequencing" invisible="1"/>
-                    <field name="check_number" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['check_printing','pdc']), ('check_manual_sequencing', '=', False)]}"/>
-                </xpath>
-                <xpath expr="//field[@name='payment_date']" position="after">
-                    <field name="effective_date" attrs="{'invisible': [('payment_method_code', '!=', 'pdc')],'required': [('payment_method_code', '=', 'pdc')]}"/>
-                    <field name="bank_reference" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                    <field name="cheque_reference" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                </xpath>
-            </field>
-        </record>
+<!--        <record id="account_check_printing.view_account_payment_invoice_form_inherited" model="ir.ui.view">-->
+<!--            <field name="name">account.payment.invoice.form.inherited</field>-->
+<!--            <field name="model">account.payment</field>-->
+<!--            <field name="inherit_id" ref="account.view_account_payment_invoice_form" />-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//div[@name='amount_div']" position="after">-->
+<!--                    <field name="check_amount_in_words" attrs="{'invisible': [('payment_method_code', 'not in', ['check_printing','pdc'])]}" groups="base.group_no_one"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='communication']" position="after">-->
+<!--                    <field name="check_manual_sequencing" invisible="1"/>-->
+<!--                    <field name="check_number" attrs="{'invisible': ['|', ('payment_method_code', 'not in', ['check_printing','pdc']), ('check_manual_sequencing', '=', False)]}"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='payment_date']" position="after">-->
+<!--                    <field name="effective_date" attrs="{'invisible': [('payment_method_code', '!=', 'pdc')],'required': [('payment_method_code', '=', 'pdc')]}"/>-->
+<!--                    <field name="bank_reference" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+<!--                    <field name="cheque_reference" attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="view_account_payment_from_invoices_inherited" model="ir.ui.view">
             <field name="name">account.register.payments.wizard.inherited</field>
