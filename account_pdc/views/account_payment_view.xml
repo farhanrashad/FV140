@@ -24,7 +24,7 @@
             </field>
         </record>
 
-        <record id="account_check_printing.view_account_payment_invoice_form_inherited" model="ir.ui.view">
+        <record id="view_account_payment_invoice_form_inherited" model="ir.ui.view">
             <field name="name">account.payment.invoice.form.inherited</field>
             <field name="model">account.payment</field>
             <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
@@ -64,7 +64,7 @@
             </field>
         </record>
 
-        <record id="account_check_printing.view_payment_check_printing_search" model="ir.ui.view">
+        <record id="view_payment_check_printing_search" model="ir.ui.view">
             <field name="name">account.payment.check.printing.search</field>
             <field name="model">account.payment</field>
             <field name="inherit_id" ref="account.view_account_payment_search"/>
