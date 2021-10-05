@@ -42,16 +42,16 @@ class ProductSaleClaim(models.Model):
     return_type = fields.Selection([('repair', 'Repair'),
                                     ('exchange', 'Exchange'),
                                     ('credit_return', 'Credit Return')], string='Return Type')
-    # partner_id = fields.Many2one('res.partner', string='Customer')
-    # return_picking_id = fields.Many2one('stock.picking')
-    # picking_ids = fields.One2many('stock.picking', 'claim_id')
-    # damage_location = fields.Many2one('stock.location', string='Damage Location',
-    #                                   default=lambda self: self._get_default_damage_location())
-    # confirmed = fields.Boolean('Confirmed')
-    # received = fields.Boolean('Received')
-    # invoiced = fields.Boolean('Invoiced')
-    # paid = fields.Boolean('Paid', compute='_get_refund_invoice_state', store=True)
-    #
+    partner_id = fields.Many2one('res.partner', string='Customer')
+    return_picking_id = fields.Many2one('stock.picking')
+    picking_ids = fields.One2many('stock.picking', 'claim_id')
+    damage_location = fields.Many2one('stock.location', string='Damage Location',
+                                      default=lambda self: self._get_default_damage_location())
+    confirmed = fields.Boolean('Confirmed')
+    received = fields.Boolean('Received')
+    invoiced = fields.Boolean('Invoiced')
+    paid = fields.Boolean('Paid', compute='_get_refund_invoice_state', store=True)
+    
     # @api.depends('invoice_ids.state')
     # def _get_refund_invoice_state(self):
     #     for claim in self:
