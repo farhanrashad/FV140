@@ -19,17 +19,17 @@
             </field>
         </record>    
 
-        <record id="product_tag_view_tree" model="ir.ui.view">
-            <field name="name">product.tag.view.tree</field>
-            <field name="model">product.tag</field>
-<!--            <field name="field_parent">child_ids</field>-->
-            <field name="arch" type="xml">
-                <tree toolbar="1" string="Product Tags">
-<!--                    <field name="parent_id" invisible="1"/>-->
-                    <field name="display_name"/>
-                </tree>
-            </field>
-        </record>
+<!--        <record id="product_tag_view_tree" model="ir.ui.view">-->
+<!--            <field name="name">product.tag.view.tree</field>-->
+<!--            <field name="model">product.tag</field>-->
+<!--&lt;!&ndash;            <field name="field_parent">child_ids</field>&ndash;&gt;-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree toolbar="1" string="Product Tags">-->
+<!--&lt;!&ndash;                    <field name="parent_id" invisible="1"/>&ndash;&gt;-->
+<!--                    <field name="display_name"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="product_tag_list" model="ir.ui.view">
             <field name="name">Product Tags</field>
@@ -51,15 +51,15 @@
                 </search>
             </field>
         </record>
-<!--        <record id="product_tag_action_form" model="ir.actions.act_window">-->
-<!--            <field name="name">Product Tags</field>-->
-<!--            <field name="type">ir.actions.act_window</field>-->
-<!--            <field name="res_model">product.tag</field>-->
-<!--&lt;!&ndash;            <field name="view_type">form</field>&ndash;&gt;-->
-<!--            <field name="view_mode">tree,form</field>-->
+        <record id="product_tag_action_form" model="ir.actions.act_window">
+            <field name="name">Product Tags</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.tag</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">tree,form</field>
 <!--            <field name="search_view_id" ref="product_tag_search"/>-->
 <!--            <field name="view_id" ref="product_tag_tree"/>-->
-<!--        </record>-->
+        </record>
 <!--        <menuitem action="product_tag_action_form"-->
 <!--            groups="base.group_no_one"-->
 <!--            id="menu_product_tag_action_form"-->
