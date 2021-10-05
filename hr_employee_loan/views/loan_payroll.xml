@@ -262,7 +262,7 @@
 			<field name="res_model">loan.installment.details</field>
 <!--			<field name="view_type">form</field>-->
 			<field name="view_mode">tree,form,graph</field>
-			<field name="search_view_id" ref="view_loan_installment_filter" />
+<!--			<field name="search_view_id" ref="view_loan_installment_filter" />-->
 			<field name="help">This shows you the detail installments related to
 				loan</field>
 		</record>
@@ -354,7 +354,7 @@
 			<field name="res_model">loan.policy</field>
 <!--			<field name="view_type">form</field>-->
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_loan_policy_filter" />
+<!--			<field name="search_view_id" ref="view_loan_policy_filter" />-->
 			<field name="help">It will be used to decide different criteria of
 				loan for categories of employee's or for particular employee</field>
 		</record>
