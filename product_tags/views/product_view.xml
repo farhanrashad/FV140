@@ -22,7 +22,7 @@
         <record id="product_tag_tree" model="ir.ui.view">
             <field name="name">product.tag.view.tree</field>
             <field name="model">product.tag</field>
-            <field name="field_parent">child_ids</field>
+<!--            <field name="field_parent">child_ids</field>-->
             <field name="arch" type="xml">
                 <tree toolbar="1" string="Product Tags">
                     <field name="parent_id" invisible="1"/>
