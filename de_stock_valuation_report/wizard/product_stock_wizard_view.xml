@@ -25,7 +25,7 @@
                 </group>
                 <group string="Select Categories">
                         <label
-                            string="(If you do not select any categories it will take all categories)"
+                            for="categ_ids" string="(If you do not select any categories it will take all categories)"
                             colspan="4" />
                         <field name="categ_ids"
                             nolabel="1">
@@ -46,7 +46,7 @@
     <record id="action_stock_valuation_wizard" model="ir.actions.act_window">
         <field name="name">Stock Valuation</field>
         <field name="res_model">product.stock.valuation.wizard</field>
-        <field name="view_type">form</field>
+<!--        <field name="view_type">form</field>-->
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
