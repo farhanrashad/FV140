@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <report
+        <record
             id="action_report_material_sample"
             string="Design Sample Report"
             model="design.sample"
