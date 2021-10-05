@@ -39,27 +39,27 @@
 
 		<!-- Loan Type -->
 
-		<record id="view_loan_type_filter" model="ir.ui.view">
-			<field name="name">loan.type.list.select</field>
-			<field name="model">loan.type</field>
-			<field name="arch" type="xml">
-				<search string="Search Loan Type">
-					<filter icon="terp-check" string="Flat Interest" domain="[('interest_mode','=','flat')]" help="Loan Type with Flat Interest mode" />
-					<filter icon="terp-check" string="Reducing Interest" domain="[('interest_mode','=','reducing')]" help="Loan Type with Reducing Interest mode" />
-					<separator orientation="vertical" />
-					<field name="name" />
-					<field name="int_rate" filter_domain="[('name','ilike',self)]" string="Int.Rate" />
-					<separator orientation="vertical" />
-					<field name="int_payable" />
-					<field name="company_id" widget="selection" groups="base.group_multi_company"/>
-					<group expand="0" string="Group By...">
-						<filter string="Interest Mode" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'interest_mode'}" />
-						<filter string="Interest Payable" icon="terp-check" domain="[]" context="{'group_by':'int_payable'}" />
-						<filter string="Company" name="company_id" groups="base.group_multi_company" icon="terp-go-home" context="{'group_by':'company_id'}" />
-					</group>
-				</search>
-			</field>
-		</record>
+<!--		<record id="view_loan_type_filter" model="ir.ui.view">-->
+<!--			<field name="name">loan.type.list.select</field>-->
+<!--			<field name="model">loan.type</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<search string="Search Loan Type">-->
+<!--					<filter icon="terp-check" string="Flat Interest" domain="[('interest_mode','=','flat')]" help="Loan Type with Flat Interest mode" />-->
+<!--					<filter icon="terp-check" string="Reducing Interest" domain="[('interest_mode','=','reducing')]" help="Loan Type with Reducing Interest mode" />-->
+<!--					<separator orientation="vertical" />-->
+<!--					<field name="name" />-->
+<!--					<field name="int_rate" filter_domain="[('name','ilike',self)]" string="Int.Rate" />-->
+<!--					<separator orientation="vertical" />-->
+<!--					<field name="int_payable" />-->
+<!--					<field name="company_id" widget="selection" groups="base.group_multi_company"/>-->
+<!--					<group expand="0" string="Group By...">-->
+<!--						<filter string="Interest Mode" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'interest_mode'}" />-->
+<!--						<filter string="Interest Payable" icon="terp-check" domain="[]" context="{'group_by':'int_payable'}" />-->
+<!--						<filter string="Company" name="company_id" groups="base.group_multi_company" icon="terp-go-home" context="{'group_by':'company_id'}" />-->
+<!--					</group>-->
+<!--				</search>-->
+<!--			</field>-->
+<!--		</record>-->
 
 		<record id="view_loan_type_tree" model="ir.ui.view">
 			<field name="name">loan.type.tree</field>
