@@ -270,24 +270,24 @@
 
 		<!-- Policy view -->
 
-		<record id="view_loan_policy_filter" model="ir.ui.view">
-			<field name="name">loan.policy.list.select</field>
-			<field name="model">loan.policy</field>
-			<field name="arch" type="xml">
-				<search string="Search Loan Policies">
-					<group>
-						<field name="name" filter_domain="[('name','ilike',self)]" />
-						<field name="code" />
-						<field name="company_id" widget="selection" groups="base.group_multi_company"/>
-					</group>
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Policy Type" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'policy_type'}" />
-						<filter string="Company" icon="terp-go-home" domain="[]" context="{'group_by':'company_id'}" />
-					</group>
-				</search>
-			</field>
-		</record>
+<!--		<record id="view_loan_policy_filter" model="ir.ui.view">-->
+<!--			<field name="name">loan.policy.list.select</field>-->
+<!--			<field name="model">loan.policy</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<search string="Search Loan Policies">-->
+<!--					<group>-->
+<!--						<field name="name" filter_domain="[('name','ilike',self)]" />-->
+<!--						<field name="code" />-->
+<!--						<field name="company_id" widget="selection" groups="base.group_multi_company"/>-->
+<!--					</group>-->
+<!--					<newline />-->
+<!--					<group expand="0" string="Group By...">-->
+<!--						<filter string="Policy Type" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'policy_type'}" />-->
+<!--						<filter string="Company" icon="terp-go-home" domain="[]" context="{'group_by':'company_id'}" />-->
+<!--					</group>-->
+<!--				</search>-->
+<!--			</field>-->
+<!--		</record>-->
 
 		<record id="view_policy_tree" model="ir.ui.view">
 			<field name="name">loan.policy.tree</field>
