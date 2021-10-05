@@ -65,16 +65,16 @@
             id="menu_product_tag_action_form"
             parent="sale.prod_config_main" sequence="3"/>
     
-<!--        <record id="product_template_tag_search_inherit" model="ir.ui.view">-->
-<!--            <field name="name">product.template.tag.view.search</field>-->
-<!--            <field name="model">product.template</field>-->
-<!--            <field name="inherit_id" ref="product.product_template_search_view"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <field name="name" position="after">-->
-<!--                    <field name="tag_ids" string="Tags" filter_domain="['|',('tag_ids','ilike',self),('tag_ids','child_of',self)]"/>-->
-<!--                </field>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="product_template_tag_search_inherit" model="ir.ui.view">
+            <field name="name">product.template.tag.view.search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="tag_ids" string="Tags" filter_domain="['|',('tag_ids','ilike',self),('tag_ids','child_of',self)]"/>
+                </field>
+            </field>
+        </record>
 
         <record id="product_template_form_inherit" model="ir.ui.view">
             <field name="name">product.template.view.form</field>
