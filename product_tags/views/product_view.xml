@@ -89,18 +89,18 @@
 
 <!--        &lt;!&ndash;  kanban view   &ndash;&gt;-->
 
-<!--        <record model="ir.ui.view" id="product_template_kanban">-->
-<!--            <field name="name">Product Template Tag Kanban</field>-->
-<!--            <field name="model">product.template</field>-->
-<!--            <field name="inherit_id" ref="product.product_template_kanban_view"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <div name="tags" position="inside">-->
-<!--                    <ul>-->
-<!--                        <li><field name="tag_ids"/></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record model="ir.ui.view" id="product_template_kanban">
+            <field name="name">Product Template Tag Kanban</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_kanban_view"/>
+            <field name="arch" type="xml">
+                <div name="tags" position="inside">
+                    <ul>
+                        <li><field name="tag_ids"/></li>
+                    </ul>
+                </div>
+            </field>
+        </record>
         
 
     </data>
