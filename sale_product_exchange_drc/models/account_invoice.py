@@ -2,7 +2,7 @@ from openerp import api, fields, models
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = 'account.move'
 
     claim_id = fields.Many2one('sale.claim')
 
