@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-        <record id="view_sale_claim_search" model="ir.ui.view">
-            <field name="name">sale_product_claim_search</field>
-            <field name="model">sale.claim</field>
-            <field name="arch" type="xml">
-                <search string="Sale Claims">
-                    <field name="name"/>
-                    <field name="partner_id"/>
-                    <filter string="New" domain="[('state','=','new')]" name="claim_new_state"/>
-                    <filter string="In-Progress" domain="[('state','=','progress')]"
-                            name="claim_progress_state"/>
-                    <filter string="Product Received" domain="[('state','=','received')]"
-                            name="claim_received_state"/>
-                    <filter string="Done" domain="[('state','=','done')]" name="claim_done_state"/>
-                    <group string="Group By">
-                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+<!--        <record id="view_sale_claim_search" model="ir.ui.view">-->
+<!--            <field name="name">sale_product_claim_search</field>-->
+<!--            <field name="model">sale.claim</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Sale Claims">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="partner_id"/>-->
+<!--                    <filter string="New" domain="[('state','=','new')]" name="claim_new_state"/>-->
+<!--                    <filter string="In-Progress" domain="[('state','=','progress')]"-->
+<!--                            name="claim_progress_state"/>-->
+<!--                    <filter string="Product Received" domain="[('state','=','received')]"-->
+<!--                            name="claim_received_state"/>-->
+<!--                    <filter string="Done" domain="[('state','=','done')]" name="claim_done_state"/>-->
+<!--                    <group string="Group By">-->
+<!--                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="view_sale_claim_tree" model="ir.ui.view">
             <field name="name">sale_product_claim_tree</field>
