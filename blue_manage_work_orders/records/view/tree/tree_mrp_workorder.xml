@@ -33,7 +33,7 @@
         <record id="mrp_workorder_tree_view_inherit_sequence" model="ir.ui.view">
             <field name="name">mrp.workorder.tree.view.inherit.sequence</field>
             <field name="model">mrp.workorder</field>
-            <field name="inherit_id" ref="mrp.mrp_production_workcenter_tree_view_inherit"/>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view"/>
             <field name="arch" type="xml">
                 <field name="state" position="before">
                     <field name="sequence"/>
