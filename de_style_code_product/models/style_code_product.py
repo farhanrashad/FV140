@@ -6,6 +6,7 @@ class ProjectTaskExt(models.Model):
     _inherit = 'product.template'
 
     style_code = fields.Char(string="Style Code")
+
     _sql_constraints = [
         ('style_code_unique', 'unique(style_code)', 'This Style Code is already exist, use a different code!'), ]
 
@@ -25,5 +26,5 @@ class ProjectTaskExt(models.Model):
 class PartnerInherit(models.Model):
     _inherit = 'res.partner'
 
-    name = fields.Char(track_visibility="onchange")
+    name = fields.Char(tracking=true)
 
