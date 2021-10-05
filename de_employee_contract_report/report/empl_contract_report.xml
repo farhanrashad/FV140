@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <report
+        <record
             id="action_employee_contract_report_document"
             string="Employee Contract Report"
             model="hr.contract"
