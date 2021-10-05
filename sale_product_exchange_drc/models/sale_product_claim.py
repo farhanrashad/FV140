@@ -17,22 +17,22 @@ class ProductSaleClaim(models.Model):
                               ('done', 'Done')],
                              compute='_get_claim_state', store=True, default='new')
 
-    # @api.depends('replace_delivery_picking_id.state', 'return_picking_id.state', 'confirmed', 'paid')
-    # def _get_claim_state(self):
-    #     for claim in self:
-    #         claim.state = 'new'
-    #         if claim.return_type == 'credit_return':
-    #             if claim.paid:
-    #                 claim.state = 'done'
-    #             elif claim.confirmed:
-    #                 claim.state = 'progress'
-    #         else:
-    #             if claim.delivered:
-    #                 claim.state = 'done'
-    #             elif claim.confirmed:
-    #                 claim.state = 'progress'
-    #
-    # group_id = fields.Many2one('procurement.group', compute='_get_procurement_group', store=True)
+    @api.depends('replace_delivery_picking_id.state', 'return_picking_id.state', 'confirmed', 'paid')
+    def _get_claim_state(self):
+        for claim in self:
+            claim.state = 'new'
+            if claim.return_type == 'credit_return':
+                if claim.paid:
+                    claim.state = 'done'
+                elif claim.confirmed:
+                    claim.state = 'progress'
+            else:
+                if claim.delivered:
+                    claim.state = 'done'
+                elif claim.confirmed:
+                    claim.state = 'progress'
+
+    group_id = fields.Many2one('procurement.group', compute='_get_procurement_group', store=True)
     #
     # @api.depends('saleorder_id')
     # def _get_procurement_group(self):
