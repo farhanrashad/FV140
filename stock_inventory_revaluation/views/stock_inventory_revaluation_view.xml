@@ -165,26 +165,26 @@
             </field>
         </record>
 
-        <record id="view_stock_inventory_revaluation_search" model="ir.ui.view">
-            <field name="name">stock.inventory.revaluation.search</field>
-            <field name="model">stock.inventory.revaluation</field>
-            <field name="arch" type="xml">
-                <search string="Search Stock Inventory Revaluation">
-                    <field name="name"/>
-                    <field name="product_template_id"/>
-                    <field name="revaluation_type"/>
-                    <field name="document_date"/>
-                    <field name="post_date"/>
-                    <field name="state"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </search>
-            </field>
-        </record>
+<!--        <record id="view_stock_inventory_revaluation_search" model="ir.ui.view">-->
+<!--            <field name="name">stock.inventory.revaluation.search</field>-->
+<!--            <field name="model">stock.inventory.revaluation</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Search Stock Inventory Revaluation">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="product_template_id"/>-->
+<!--                    <field name="revaluation_type"/>-->
+<!--                    <field name="document_date"/>-->
+<!--                    <field name="post_date"/>-->
+<!--                    <field name="state"/>-->
+<!--                    <field name="company_id" groups="base.group_multi_company"/>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="action_stock_inventory_revaluation_tree" model="ir.actions.act_window">
             <field name="name">Inventory Revaluation</field>
             <field name="res_model">stock.inventory.revaluation</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
