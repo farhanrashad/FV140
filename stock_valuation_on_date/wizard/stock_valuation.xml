@@ -12,7 +12,7 @@
                             <field name="company_id" string="Company"
                                 options="{'no_open': True, 'no_create': True, 'no_create_edit': True}" />
                             <label
-                                string="(If you do not select company it will take all companies)"
+                                for="company_id" string="(If you do not select company it will take all companies)"
                                 colspan="4" />
                         </group>
                         <group string="Warehouses">
@@ -20,7 +20,7 @@
                                 string="Warehouses"
                                 options="{'no_open': True, 'no_create': True, 'no_create_edit': True}" />
                             <label
-                                string="(If you do not select warehouse it will take all warehouses)"
+                                for="warehouse_ids" string="(If you do not select warehouse it will take all warehouses)"
                                 colspan="4" />
                         </group>
                     </group>
@@ -40,7 +40,7 @@
                     </group>
                     <group string="Select Categories">
                         <label
-                            string="(If you do not select any categories it will take all categories)"
+                            for="filter_product_categ_ids" string="(If you do not select any categories it will take all categories)"
                             colspan="4" />
                         <field name="filter_product_categ_ids"
                             nolabel="1">
