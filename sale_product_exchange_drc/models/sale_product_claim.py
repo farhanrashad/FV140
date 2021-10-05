@@ -267,33 +267,33 @@ class ProductSaleClaim(models.Model):
     #         return action
     #
     # # @api.multi
-    # def create_claim_refund_invoice(self):
-    #     for claim in self:
-    #         order_inv = claim.saleorder_id.order_line.mapped('invoice_lines').mapped('invoice_id')
-    #         order_inv_lines = claim.saleorder_id.order_line.mapped('invoice_lines')
-    #         invoice_vals = {
-    #             'name': '',
-    #             'type': 'out_refund',
-    #             'partner_id': claim.partner_id.id,
-    #             'invoice_line_ids': [(0, 0, {'name': line.product_id.name, 'product_id': line.product_id.id,
-    #                                          'quantity': line.return_qty, 'uom_id': line.product_id.uom_id.id,
-    #                                          'price_unit': line.product_id.standard_price,
-    #                                          'account_id': order_inv.account_id.id}) for line in claim.line_ids],
-    #             'account_id': order_inv.account_id.id,
-    #             'journal_id': order_inv.journal_id.id,
-    #             'currency_id': order_inv.currency_id.id,
-    #             'claim_id': claim.id
-    #         }
-    #         inv = self.env['account.move'].create(invoice_vals)
-    #         return {
-    #             'view_type': 'form',
-    #             'view_mode': 'form',
-    #             'res_model': 'account.move',
-    #             'type': 'ir.actions.act_window',
-    #             'res_id': inv.id,
-    #             'target': 'self',
-    #         }
-    #
+    def create_claim_refund_invoice(self):
+        for claim in self:
+            order_inv = claim.saleorder_id.order_line.mapped('invoice_lines').mapped('invoice_id')
+            order_inv_lines = claim.saleorder_id.order_line.mapped('invoice_lines')
+            invoice_vals = {
+                'name': '',
+                'type': 'out_refund',
+                'partner_id': claim.partner_id.id,
+                'invoice_line_ids': [(0, 0, {'name': line.product_id.name, 'product_id': line.product_id.id,
+                                             'quantity': line.return_qty, 'uom_id': line.product_id.uom_id.id,
+                                             'price_unit': line.product_id.standard_price,
+                                             'account_id': order_inv.account_id.id}) for line in claim.line_ids],
+                'account_id': order_inv.account_id.id,
+                'journal_id': order_inv.journal_id.id,
+                'currency_id': order_inv.currency_id.id,
+                'claim_id': claim.id
+            }
+            inv = self.env['account.move'].create(invoice_vals)
+            return {
+                'view_type': 'form',
+                'view_mode': 'form',
+                'res_model': 'account.move',
+                'type': 'ir.actions.act_window',
+                'res_id': inv.id,
+                'target': 'self',
+            }
+        
     # # @api.multi
     def create_out_shipment(self):
         for claim in self:
