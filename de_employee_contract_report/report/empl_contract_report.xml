@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+<!--    <data>-->
         <record
             id="action_employee_contract_report_document"
             string="Employee Contract Report"
@@ -10,5 +10,5 @@
             name="de_employee_contract_report.report_employee_contract_document"
             print_report_name="'Employee Contract - %s' % (object.name)"
         />
-    </data> 
+<!--    </data> -->
 </odoo>
