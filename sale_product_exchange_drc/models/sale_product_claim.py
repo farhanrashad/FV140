@@ -295,42 +295,42 @@ class ProductSaleClaim(models.Model):
     #         }
     #
     # # @api.multi
-    # def create_out_shipment(self):
-    #     for claim in self:
-    #         if claim.replace_delivery_picking_id:
-    #             raise except_orm('Delivery Order is Already created for this claim',
-    #                              'Delivery Order is ' + claim.replace_delivery_picking_id.name)
-    #         pick_type_id = claim.return_picking_id.picking_type_id.return_picking_type_id and claim.return_picking_id.picking_type_id.return_picking_type_id.id or claim.return_picking_id.picking_type_id.id
-    #         new_picking = claim.return_picking_id.copy({
-    #             'move_lines': [],
-    #             'picking_type_id': pick_type_id,
-    #             'state': 'draft',
-    #             'origin': claim.return_picking_id.name + ' - ' + claim.name,
-    #             'claim_id': claim.id
-    #         })
-    #         claim.replace_delivery_picking_id = new_picking.id
-    #         for move in claim.return_picking_id.move_lines:
-    #             move.copy({
-    #                 'product_uom_qty': move.product_uom_qty,
-    #                 'picking_id': new_picking.id,
-    #                 'state': 'draft',
-    #                 'location_id': claim.saleorder_id.picking_ids[0].location_id.id,
-    #                 'location_dest_id': move.location_id.id,
-    #                 'picking_type_id': pick_type_id,
-    #                 'warehouse_id': claim.saleorder_id.warehouse_id.id,
-    #                 'origin_returned_move_id': move.id,
-    #                 'procure_method': 'make_to_stock',
-    #             })
-    #         return {
-    #             'view_type': 'form',
-    #             'view_mode': 'form',
-    #             'res_model': 'stock.picking',
-    #             'type': 'ir.actions.act_window',
-    #             'res_id': new_picking.id,
-    #             'context': self._context,
-    #             'target': 'new',
-    #             'flags': {'action_buttons': True}
-    #         }
+    def create_out_shipment(self):
+        for claim in self:
+            if claim.replace_delivery_picking_id:
+                raise except_orm('Delivery Order is Already created for this claim',
+                                 'Delivery Order is ' + claim.replace_delivery_picking_id.name)
+            pick_type_id = claim.return_picking_id.picking_type_id.return_picking_type_id and claim.return_picking_id.picking_type_id.return_picking_type_id.id or claim.return_picking_id.picking_type_id.id
+            new_picking = claim.return_picking_id.copy({
+                'move_lines': [],
+                'picking_type_id': pick_type_id,
+                'state': 'draft',
+                'origin': claim.return_picking_id.name + ' - ' + claim.name,
+                'claim_id': claim.id
+            })
+            claim.replace_delivery_picking_id = new_picking.id
+            for move in claim.return_picking_id.move_lines:
+                move.copy({
+                    'product_uom_qty': move.product_uom_qty,
+                    'picking_id': new_picking.id,
+                    'state': 'draft',
+                    'location_id': claim.saleorder_id.picking_ids[0].location_id.id,
+                    'location_dest_id': move.location_id.id,
+                    'picking_type_id': pick_type_id,
+                    'warehouse_id': claim.saleorder_id.warehouse_id.id,
+                    'origin_returned_move_id': move.id,
+                    'procure_method': 'make_to_stock',
+                })
+            return {
+                'view_type': 'form',
+                'view_mode': 'form',
+                'res_model': 'stock.picking',
+                'type': 'ir.actions.act_window',
+                'res_id': new_picking.id,
+                'context': self._context,
+                'target': 'new',
+                'flags': {'action_buttons': True}
+            }
 
 
 class ProductSaleClaimLine(models.Model):
