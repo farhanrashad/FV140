@@ -51,15 +51,15 @@
                 </search>
             </field>
         </record>
-        <record id="product_tag_action_form" model="ir.actions.act_window">
-            <field name="name">Product Tags</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">product.tag</field>
-<!--            <field name="view_type">form</field>-->
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="product_tag_search"/>
-            <field name="view_id" ref="product_tag_tree"/>
-        </record>
+<!--        <record id="product_tag_action_form" model="ir.actions.act_window">-->
+<!--            <field name="name">Product Tags</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">product.tag</field>-->
+<!--&lt;!&ndash;            <field name="view_type">form</field>&ndash;&gt;-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="search_view_id" ref="product_tag_search"/>-->
+<!--            <field name="view_id" ref="product_tag_tree"/>-->
+<!--        </record>-->
 <!--        <menuitem action="product_tag_action_form"-->
 <!--            groups="base.group_no_one"-->
 <!--            id="menu_product_tag_action_form"-->
