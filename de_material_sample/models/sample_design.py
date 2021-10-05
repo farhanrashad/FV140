@@ -12,7 +12,7 @@ class DesignSample(models.Model):
         ('pending', 'Pending'),
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
-        ], string='Status', readonly=True, copy=False, index=True, tracking=True, track_sequence=3, default='draft')
+        ], string='Status', readonly=True, copy=False, index=True, tracking=True, default='draft')
     
     sample_name = fields.Char(string="Product")
     partner_id = fields.Many2one('res.partner', string='Customer', required=True)
