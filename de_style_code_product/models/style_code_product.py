@@ -26,5 +26,5 @@ class ProjectTaskExt(models.Model):
 class PartnerInherit(models.Model):
     _inherit = 'res.partner'
 
-    name = fields.Char(tracking=true)
+    name = fields.Char(tracking=True)
 
