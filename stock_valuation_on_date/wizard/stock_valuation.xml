@@ -29,7 +29,7 @@
                             <field name="location_id" string="Select Location"
                                 options="{'no_open': True, 'no_create': True, 'no_create_edit': True}" />
                             <label
-                                string="(If you do not select any location, then it will take all above warehouses internal locations)"
+                                for="location_id" string="(If you do not select any location, then it will take all above warehouses internal locations)"
                                 colspan="4" />
                         </group>
                         <group string="Valuation">
@@ -66,7 +66,7 @@
         <record model="ir.actions.act_window" id="action_inventoryvaluation_report">
             <field name="name">Stock Valuation</field>
             <field name="res_model">stock.valuation.ondate.report</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_stock_valuation_ondate_report" />
             <field name="target">new</field>
