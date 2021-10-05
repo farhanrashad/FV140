@@ -14,6 +14,7 @@ class HREmployeeExtend(models.Model):
 
 class HrEmergencyCOntact(models.Model):
     _name = 'hr.employee.emergency.contact'
+    _description = "Employee Emergency Contact"
 
     hr_employee_id = fields.Many2one('hr.employee', string='Employee Reference', required=False, ondelete='cascade',
                                      index=True, copy=False, readonly=True)
