@@ -7,7 +7,7 @@ class allow_ipaddress(models.Model):
     _description = 'Allow IP to Login odoo'
     
     ipaddress = fields.Char('IP address', required = True)
-    user_id = fields.Many2one('res.users', 'User', ondelete='cascade', required=True, select=True)
+    user_id = fields.Many2one('res.users', 'User', ondelete='cascade', required=True, index=True)
 
     _order = 'ipaddress'
     _sql_constraints = [
