@@ -119,47 +119,47 @@
             </field>
         </record>
         
-        <record id="material_internal_requisition_search_view" model="ir.ui.view">
-            <field name="name">internal.requisition search</field>
-            <field name="model">internal.requisition</field>
-            <field name="arch" type="xml">
-                <search string="Sale Estimate search">
-                    <field name="request_emp"/>
-                    <field name="request_date"/>
-                    <field name="company_id"/>
-                    <field name="date_end"/>
-                    <field name="department_id"/>
-                    <field name="approve_manager"/>
-                    <field name="approve_user"/>
-                    <field name="location"/>
-                    <field name="managerapp_date"/>
-                    <field name="userrapp_date"/>
-                    <field name="receive_date"/>
-                    <field name="date_done"/>
-                    <field name="desti_loca_id"/>
-                    <field name="delivery_picking_id"/>
-                    <field name="reason"/>
-                    <field name="state"/>
-                    <group expand="0" string="Group By">
-                        <filter string="Employee" context="{'group_by':'request_emp'}"/>
-                        <filter string="Reqisition Date" context="{'group_by':'request_date'}"/>
-                        <filter string="Company" context="{'group_by':'company_id'}"/>
-                        <filter string="Reqisition Dedline" context="{'group_by':'date_end'}"/>
-                        <filter string="Department" context="{'group_by':'department_id'}"/>
-                        <filter string="Department Manager" context="{'group_by':'approve_manager'}"/>
-                        <filter string="Approve By" context="{'group_by':'approve_user'}"/>
-                        <filter string="Location" context="{'group_by':'location'}"/>
-                        <filter string="Manager Approve Date" context="{'group_by':'managerapp_date'}"/>
-                        <filter string="User Approve Date" context="{'group_by':'userrapp_date'}"/>
-                        <filter string="Destination Location" context="{'group_by':'desti_loca_id'}"/>
-                        <filter string="Delivery Picking" context="{'group_by':'delivery_picking_id'}"/>
-                        <filter string="Reason" context="{'group_by':'reason'}"/>
-                        <filter string="Date Done" context="{'group_by':'date_done'}"/>
-                        <filter string="State" context="{'group_by':'state'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+<!--        <record id="material_internal_requisition_search_view" model="ir.ui.view">-->
+<!--            <field name="name">internal.requisition search</field>-->
+<!--            <field name="model">internal.requisition</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Sale Estimate search">-->
+<!--                    <field name="request_emp"/>-->
+<!--                    <field name="request_date"/>-->
+<!--                    <field name="company_id"/>-->
+<!--                    <field name="date_end"/>-->
+<!--                    <field name="department_id"/>-->
+<!--                    <field name="approve_manager"/>-->
+<!--                    <field name="approve_user"/>-->
+<!--                    <field name="location"/>-->
+<!--                    <field name="managerapp_date"/>-->
+<!--                    <field name="userrapp_date"/>-->
+<!--                    <field name="receive_date"/>-->
+<!--                    <field name="date_done"/>-->
+<!--                    <field name="desti_loca_id"/>-->
+<!--                    <field name="delivery_picking_id"/>-->
+<!--                    <field name="reason"/>-->
+<!--                    <field name="state"/>-->
+<!--                    <group expand="0" string="Group By">-->
+<!--                        <filter string="Employee" context="{'group_by':'request_emp'}"/>-->
+<!--                        <filter string="Reqisition Date" context="{'group_by':'request_date'}"/>-->
+<!--                        <filter string="Company" context="{'group_by':'company_id'}"/>-->
+<!--                        <filter string="Reqisition Dedline" context="{'group_by':'date_end'}"/>-->
+<!--                        <filter string="Department" context="{'group_by':'department_id'}"/>-->
+<!--                        <filter string="Department Manager" context="{'group_by':'approve_manager'}"/>-->
+<!--                        <filter string="Approve By" context="{'group_by':'approve_user'}"/>-->
+<!--                        <filter string="Location" context="{'group_by':'location'}"/>-->
+<!--                        <filter string="Manager Approve Date" context="{'group_by':'managerapp_date'}"/>-->
+<!--                        <filter string="User Approve Date" context="{'group_by':'userrapp_date'}"/>-->
+<!--                        <filter string="Destination Location" context="{'group_by':'desti_loca_id'}"/>-->
+<!--                        <filter string="Delivery Picking" context="{'group_by':'delivery_picking_id'}"/>-->
+<!--                        <filter string="Reason" context="{'group_by':'reason'}"/>-->
+<!--                        <filter string="Date Done" context="{'group_by':'date_done'}"/>-->
+<!--                        <filter string="State" context="{'group_by':'state'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
         
         <record model="ir.actions.act_window" id="action_material_internal_requisition">
             <field name="name">Internal Requisitions</field>
