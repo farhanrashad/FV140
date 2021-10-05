@@ -135,36 +135,36 @@
 
 		<!-- Loan Installment view -->
 
-		<record id="view_loan_installment_filter" model="ir.ui.view">
-			<field name="name">loan.install.list.select</field>
-			<field name="model">loan.installment.details</field>
-			<field name="arch" type="xml">
-				<search string="Search Loan Installment">
-					<filter icon="terp-check" string="Paid" domain="[('state','=','paid')]" help="Installment that has been paid" />
-					<filter icon="terp-check" string="Unpaid" domain="[('state','=','unpaid')]" help="Installment that haven't been paid" />
-					<separator orientation="vertical" />
-					<field name="employee_id" />
-					<field name="loan_id" filter_domain="[('name','ilike',self)]" string="Loan Number" />
-					<separator orientation="vertical" />
-					<field name="principal_amt" />
-					<group expand="0" string="Search on Dates">
-						<field name="date_from" />
-						<field name="date_to" />
-					</group>
-					<group expand="0" string="Group By...">
-						<filter string="Loan" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'loan_id'}" />
-						<filter string="Employee" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'employee_id'}" />
-						<separator orientation="vertical" />
-						<filter string="Date From" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'date_from'}" />
-						<filter string="Date To" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'date_to'}" />
-						<separator orientation="vertical" />
-						<filter string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}" />
-						<separator orientation="vertical" />
-						<filter string="Company" name="company_id" groups="base.group_multi_company" icon="terp-go-home" context="{'group_by':'company_id'}" />
-					</group>
-				</search>
-			</field>
-		</record>
+<!--		<record id="view_loan_installment_filter" model="ir.ui.view">-->
+<!--			<field name="name">loan.install.list.select</field>-->
+<!--			<field name="model">loan.installment.details</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<search string="Search Loan Installment">-->
+<!--					<filter icon="terp-check" string="Paid" domain="[('state','=','paid')]" help="Installment that has been paid" />-->
+<!--					<filter icon="terp-check" string="Unpaid" domain="[('state','=','unpaid')]" help="Installment that haven't been paid" />-->
+<!--					<separator orientation="vertical" />-->
+<!--					<field name="employee_id" />-->
+<!--					<field name="loan_id" filter_domain="[('name','ilike',self)]" string="Loan Number" />-->
+<!--					<separator orientation="vertical" />-->
+<!--					<field name="principal_amt" />-->
+<!--					<group expand="0" string="Search on Dates">-->
+<!--						<field name="date_from" />-->
+<!--						<field name="date_to" />-->
+<!--					</group>-->
+<!--					<group expand="0" string="Group By...">-->
+<!--						<filter string="Loan" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'loan_id'}" />-->
+<!--						<filter string="Employee" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'employee_id'}" />-->
+<!--						<separator orientation="vertical" />-->
+<!--						<filter string="Date From" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'date_from'}" />-->
+<!--						<filter string="Date To" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'date_to'}" />-->
+<!--						<separator orientation="vertical" />-->
+<!--						<filter string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}" />-->
+<!--						<separator orientation="vertical" />-->
+<!--						<filter string="Company" name="company_id" groups="base.group_multi_company" icon="terp-go-home" context="{'group_by':'company_id'}" />-->
+<!--					</group>-->
+<!--				</search>-->
+<!--			</field>-->
+<!--		</record>-->
 
 		<record id="view_installment_tree" model="ir.ui.view">
 			<field name="name">loan.installment.tree</field>
