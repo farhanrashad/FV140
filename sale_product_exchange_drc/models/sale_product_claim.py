@@ -104,7 +104,7 @@ class ProductSaleClaim(models.Model):
                             'currency_id': order_inv.currency_id.id,
                             'claim_id': claim.id
                         }
-                        self.env['account.invoice'].create(invoice_vals)
+                        self.env['account.move'].create(invoice_vals)
 
     replace_delivery_picking_id = fields.Many2one('stock.picking')
     claim_desc = fields.Text('Description')
@@ -116,7 +116,7 @@ class ProductSaleClaim(models.Model):
         for claim in self:
             claim.picking_count = claim.picking_ids and len(claim.picking_ids) or 0
 
-    invoice_ids = fields.One2many('account.invoice', 'claim_id')
+    invoice_ids = fields.One2many('account.move', 'claim_id')
     total_invoices = fields.Float('Invoice Count', compute='_calc_invoice_count')
 
     @api.depends('invoice_ids')
@@ -284,11 +284,11 @@ class ProductSaleClaim(models.Model):
                 'currency_id': order_inv.currency_id.id,
                 'claim_id': claim.id
             }
-            inv = self.env['account.invoice'].create(invoice_vals)
+            inv = self.env['account.move'].create(invoice_vals)
             return {
                 'view_type': 'form',
                 'view_mode': 'form',
-                'res_model': 'account.invoice',
+                'res_model': 'account.move',
                 'type': 'ir.actions.act_window',
                 'res_id': inv.id,
                 'target': 'self',
