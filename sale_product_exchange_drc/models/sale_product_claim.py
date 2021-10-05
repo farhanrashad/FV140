@@ -34,23 +34,23 @@ class ProductSaleClaim(models.Model):
 
     group_id = fields.Many2one('procurement.group', compute='_get_procurement_group', store=True)
     #
-    @api.depends('saleorder_id')
-    def _get_procurement_group(self):
-        for claim in self:
-            claim.group_id = claim.saleorder_id.procurement_group_id
+    # @api.depends('saleorder_id')
+    # def _get_procurement_group(self):
+    #     for claim in self:
+    #         claim.group_id = claim.saleorder_id.procurement_group_id
     #
-    return_type = fields.Selection([('repair', 'Repair'),
-                                    ('exchange', 'Exchange'),
-                                    ('credit_return', 'Credit Return')], string='Return Type')
-    partner_id = fields.Many2one('res.partner', string='Customer')
-    return_picking_id = fields.Many2one('stock.picking')
-    picking_ids = fields.One2many('stock.picking', 'claim_id')
-    damage_location = fields.Many2one('stock.location', string='Damage Location',
-                                      default=lambda self: self._get_default_damage_location())
-    confirmed = fields.Boolean('Confirmed')
-    received = fields.Boolean('Received')
-    invoiced = fields.Boolean('Invoiced')
-    paid = fields.Boolean('Paid', compute='_get_refund_invoice_state', store=True)
+    # return_type = fields.Selection([('repair', 'Repair'),
+    #                                 ('exchange', 'Exchange'),
+    #                                 ('credit_return', 'Credit Return')], string='Return Type')
+    # partner_id = fields.Many2one('res.partner', string='Customer')
+    # return_picking_id = fields.Many2one('stock.picking')
+    # picking_ids = fields.One2many('stock.picking', 'claim_id')
+    # damage_location = fields.Many2one('stock.location', string='Damage Location',
+    #                                   default=lambda self: self._get_default_damage_location())
+    # confirmed = fields.Boolean('Confirmed')
+    # received = fields.Boolean('Received')
+    # invoiced = fields.Boolean('Invoiced')
+    # paid = fields.Boolean('Paid', compute='_get_refund_invoice_state', store=True)
     #
     # @api.depends('invoice_ids.state')
     # def _get_refund_invoice_state(self):
