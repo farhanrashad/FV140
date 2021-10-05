@@ -76,6 +76,6 @@
 		</record>
 
 		<!--MENU WHICH OPENS WIZARD-->
-		<menuitem id="menu_view_emp_payroll_statement" name="Reporting" parent="hr_payroll.menu_hr_payroll_configuration" sequence="14"/>
+		<menuitem id="menu_view_emp_payroll_statement" name="Reporting" parent="hr_payroll.menu_hr_payroll_report" sequence="14"/>
 		<menuitem id="sub_view_emp_payroll_statement" name="Payroll Statement" parent="menu_view_emp_payroll_statement" action="action_emp_payroll_statement" sequence="1"/>
 </odoo>
