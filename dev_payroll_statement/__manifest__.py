@@ -22,6 +22,7 @@ Employee payslip statement, payroll statement, hr payslip statement, hr payroll 
     'website': 'http://www.devintellecs.com/',
     'depends': ['hr_payroll'],
     'data': [
+        'security/ir.model.access.csv',
         'wizard/emp_payroll_statement_view.xml',
         'views/payroll_statement_tempate.xml',
         'views/payroll_statement_report_menu.xml',        
