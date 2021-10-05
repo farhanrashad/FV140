@@ -22,9 +22,10 @@
         <record id="product_tag_tree" model="ir.ui.view">
             <field name="name">product.tag.view.tree</field>
             <field name="model">product.tag</field>
-            <field name="field_parent">child_ids</field>
+<!--            <field name="field_parent">child_ids</field>-->
             <field name="arch" type="xml">
                 <tree toolbar="1" string="Product Tags">
+                    <field name="parent_id"/>
                     <field name="display_name"/>
                 </tree>
             </field>
@@ -54,7 +55,7 @@
             <field name="name">Product Tags</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">product.tag</field>
-            <field name="view_type">form</field>
+<!--            <field name="view_type">form</field>-->
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="product_tag_search"/>
             <field name="view_id" ref="product_tag_tree"/>
