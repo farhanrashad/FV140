@@ -57,7 +57,7 @@ class PosOrder(models.Model):
             order_ids = []
             for each_order in order_data:
             	each_order['payment_data'] = []
-                if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
+                if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) >0:
                     for each_payment in each_order.get('payment_ids'):
                         payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)],['amount','payment_method_id'])
                         if payment_obj and payment_obj[0]:
