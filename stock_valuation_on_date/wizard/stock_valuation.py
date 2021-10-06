@@ -17,6 +17,7 @@ from ..report.stock_valuation import StockValuationCategory
 
 class StockValuationDateReport(models.TransientModel,
                                StockValuationCategory):
+    
     _name = 'stock.valuation.ondate.report'
 
     company_id = fields.Many2one('res.company', string='Company')
