@@ -9,7 +9,7 @@ from odoo.addons import decimal_precision as dp
 
 class AccountMaster(models.Model):
     _name = 'account.summary.master'
-    _description = 'Account Balance'
+    _description = 'Account Summary Master'
     
     name = fields.Char('Name',required=True)
     #accounts_total = fields.Float(string='Total',compute='_compute_accounts_total', readonly=True)
@@ -41,6 +41,7 @@ class AccountMaster(models.Model):
 
 class Account(models.Model):
     _name = 'account.summary.account'
+    _description = 'Account Summary Account'
     
     account_summary_id = fields.Many2one('account.summary.master', string='Account Summary', index=True, required=True, ondelete='cascade')
     
