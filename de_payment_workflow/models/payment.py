@@ -35,7 +35,7 @@ class account_payment(models.Model):
                               ('sent', 'Sent'),
                               ('reconciled', 'Reconciled'),
                               ('cancelled', 'Cancelled')],
-                             readonly=True, default='draft', copy=False, string="Status", track_visibility='onchange')
+                             readonly=True, default='draft', copy=False, string="Status", tracking=True)
 
     # @api.multi
     def action_draft(self):
