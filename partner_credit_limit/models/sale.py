@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
         today_dt = today_dt
         for line in movelines:
             maturity_date = line.date_maturity
-            if maturity_date < today_dt:
+            if str(maturity_date) < str(today_dt):
                 credit += line.debit
                 debit += line.credit
 
