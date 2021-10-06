@@ -43,7 +43,7 @@ payroll
             """,
     'author': 'Probuse Consulting Service Pvt. Ltd.',
     'website': 'www.probuse.com',
-    'depends': ['hr', 'account', 'hr_payroll'],
+    'depends': ['base', 'hr', 'account', 'hr_payroll'],
     'images': ['static/description/img2.jpg'],
     'data': ['security/employee_advance_salary_security.xml',
              'security/ir.model.access.csv',

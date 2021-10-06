@@ -26,7 +26,7 @@
     'category': 'Accounting',
     'summary': 'Report of Payments with filter for PDC type',
     'description': """ Report of Payments with filter for PDC type """,
-    'depends': ['account_check_printing', 'account_pdc'],
+    'depends': ['account', 'account_pdc'],
     'data': [
         'views/report_payment.xml',
         'wizard/account_report_payment_view.xml',

@@ -26,7 +26,7 @@
     'category': 'Accounting',
     'summary': 'Extension on Cheques to handle Post Dated Cheques',
     'description': """ Extension on Cheques to handle Post Dated Cheques """,
-    'depends': ['account_check_printing'],
+    'depends': ['base', 'account'],
     'data': [
         'data/account_pdc_data.xml',
         'views/account_payment_view.xml',
