@@ -1,6 +1,7 @@
 from odoo.http import WebRequest
 import threading
 import logging
+
 _logger = logging.getLogger(__name__)
 def __init__(self, httprequest):
     self.httprequest = httprequest
