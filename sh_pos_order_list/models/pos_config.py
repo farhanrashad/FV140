@@ -57,16 +57,37 @@ class PosOrder(models.Model):
         if order_data and len(order_data) > 0:
             order_ids = []
             for each_order in order_data:
-            	each_order['payment_data'] = []
+                each_order['payment_data'] = []
                 if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
                     for each_payment in each_order.get('payment_ids'):
-                        payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)],['amount','payment_method_id'])
+                        payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)], ['amount','payment_method_id'])
                         if payment_obj and payment_obj[0]:
                             each_order['payment_data'].append(payment_obj[0])
                 order_ids.append(each_order.get('id'))
             order_line = self.env['pos.order.line'].search_read([('order_id','in', order_ids)])
-        # return {'order': order_data}
         return {'order': order_data, 'order_line': order_line}
+        # if order_data and len(order_data) > 0:
+        #     order_ids = []
+        #     for each_order in order_data:
+        #     	each_order['payment_data'] = []
+        #         if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
+        #             for each_payment in each_order.get('payment_ids'):
+        #                 payment_obj = self.env['pos.payment'].search_read([('id', '=', each_payment)],
+        #                                                                   ['amount', 'payment_method_id'])
+        #                 if payment_obj and payment_obj[0]:
+        #                     each_order['payment_data'].append(payment_obj[0])
+        #         order_ids.append(each_order.get('id'))
+        #     order_line = self.env['pos.order.line'].search_read([('order_id', 'in', order_ids)])
+        # return {'order': order_data, 'order_line': order_line}
+        #         if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
+        #             for each_payment in each_order.get('payment_ids'):
+        #                 payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)],['amount','payment_method_id'])
+        #                 if payment_obj and payment_obj[0]:
+        #                     each_order['payment_data'].append(payment_obj[0])
+        #         order_ids.append(each_order.get('id'))
+        #     order_line = self.env['pos.order.line'].search_read([('order_id','in', order_ids)])
+        # # return {'order': order_data}
+        # return {'order': order_data, 'order_line': order_line}
 
     @api.model
     def search_order(self, config_data, page_number):
