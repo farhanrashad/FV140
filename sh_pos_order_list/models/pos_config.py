@@ -105,7 +105,8 @@ class PosOrder(models.Model):
                 if config_data['sh_day_wise_option'] == 'last_no_day':
                     if config_data['sh_last_no_days']:
                         today_date = datetime.today().strftime('%Y-%m-%d')
-                        last_date = datetime.today() - \ timedelta(days=config_data['sh_last_no_days'])
+                        last_date = datetime.today() - \
+                                    timedelta(days=config_data['sh_last_no_days'])
                         last_date = last_date.strftime('%Y-%m-%d')
                         order_data = self.env['pos.order'].search_read(['|', ('user_id','=', self.env.user.id), ('assigned_config','=', config_data['id']), ('date_order','<=', (today_date + " 24:00:00")), ('date_order','>', (last_date + " 24:00:00")), ('state','!=', 'cancel')], limit=showTo)
         order_data = order_data[showFrom:showTo]
