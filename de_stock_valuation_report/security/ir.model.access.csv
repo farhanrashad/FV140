@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_product_stock_valuation_wizard,access.product.stock.valuation.wizard,model_product_stock_valuation_wizard,base.group_user,1,1,1,1
-access_de_stock_reports_de_stock_reports,de_stock_reports.de_stock_reports,model_de_stock_reports_de_stock_reports,,1,0,0,0
