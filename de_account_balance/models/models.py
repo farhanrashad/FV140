@@ -9,6 +9,7 @@ from odoo.addons import decimal_precision as dp
 
 class AccountMaster(models.Model):
     _name = 'account.summary.master'
+    _description = 'Account Balance'
     
     name = fields.Char('Name',required=True)
     #accounts_total = fields.Float(string='Total',compute='_compute_accounts_total', readonly=True)
