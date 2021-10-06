@@ -28,6 +28,7 @@ _logger = logging.getLogger(__name__)
 
 class ReportPayment(models.AbstractModel):
     _name = 'report.account_pdc_payment_report.report_payment_template'
+    _description = 'PDC Payment Report'
 
     def get_lines(self, payment_type, journal_id, pdc_only, data):
         domain = []
