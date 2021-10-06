@@ -65,8 +65,8 @@ class PosOrder(models.Model):
                             each_order['payment_data'].append(payment_obj[0])
                 order_ids.append(each_order.get('id'))
             order_line = self.env['pos.order.line'].search_read([('order_id','in', order_ids)])
-        return {'order': order_data}
-        # return {'order': order_data, 'order_line': order_line}
+        # return {'order': order_data}
+        return {'order': order_data, 'order_line': order_line}
 
     @api.model
     def search_order(self, config_data, page_number):
