@@ -19,7 +19,7 @@ class cheque_setting(models.Model):
     color = fields.Char('Color', default="#000", required="1")
 
     is_partner = fields.Boolean('Print Partner', default=True)
-    is_partner_bold = fields.Boolean('Font Bold')
+    is_partner_bold = fields.Boolean('Partner Font Bold')
     partner_text = fields.Selection([('prefix', 'Prefix'), ('suffix', 'Suffix')], string='Partner Title')
     partner_m_top = fields.Float('Partner From Top', default=150)
     partner_m_left = fields.Float('Partner From Left', default=70)
@@ -42,17 +42,17 @@ class cheque_setting(models.Model):
     is_amount = fields.Boolean('Print Amount', default=True)
     amt_m_top = fields.Float('Amt From Top', default=158.76)
     amt_m_left = fields.Float('Amt From Left', default=540)
-    is_star = fields.Boolean('Print Star', help="if true then print 3 star before and after Amount", default=True)
+    is_star = fields.Boolean('Amt Print Star', help="if true then print 3 star before and after Amount", default=True)
 
     is_currency = fields.Boolean('Print Currency')
 
     is_amount_word = fields.Boolean('Print Amount Words', default=True)
-    is_word_bold = fields.Boolean('Font Bold')
+    is_word_bold = fields.Boolean('Amt Font Bold')
     word_in_f_line = fields.Float('Split Words After', default=5,
                                   help="How Many Words You want to print in first line, The rest will go in second line")
     amt_w_m_top = fields.Float('From First Top', default=158.76)
     amt_w_m_left = fields.Float('From First Left', default=105.84)
-    is_star_word = fields.Boolean('Print Star', help="if true then print 3 star before and after Words Amount",
+    is_star_word = fields.Boolean('Amtword Print Star', help="if true then print 3 star before and after Words Amount",
                                   default=True)
 
     amt_w_s_m_top = fields.Float('From Sec Top', default=185)
@@ -86,11 +86,11 @@ class cheque_setting(models.Model):
     acc_pay_m_top = fields.Float('A/C PAY From Top', default=90)
     acc_pay_m_left = fields.Float('A/C PAY Pay From Left', default=50)
     
-    is_f_line_sig = fields.Boolean('Print Signature')
+    is_f_line_sig = fields.Boolean('F Print Signature')
     f_sig_m_top = fields.Float('Fsig From Top', default=200)
     f_sig_m_left = fields.Float('Fsig From Left', default=540)
     
-    is_s_line_sig = fields.Boolean('Print Signature')
+    is_s_line_sig = fields.Boolean('S Print Signature')
     s_sig_m_top = fields.Float('Ssig From Top', default=300)
     s_sig_m_left = fields.Float('Ssig From Left', default=540)
 
