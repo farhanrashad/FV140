@@ -20,7 +20,7 @@
         'views/report_account_report_partner_ledger.xml',
         'wizard/account_report_general_ledger_view.xml',
         'views/report_partnerledger.xml',
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         ],
     'test': [],
     'installable': True,
