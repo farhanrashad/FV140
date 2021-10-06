@@ -13,6 +13,7 @@ from num2words import num2words
 
 class print_check(models.AbstractModel): 
     _name = 'report.dev_print_cheque.report_print_cheque'
+    _description = 'Report Print Cheque'
 
     def get_date(self,date):
         date = date.split('-')
@@ -76,7 +77,8 @@ class print_check(models.AbstractModel):
 
 class print_cheque_wizard(models.AbstractModel):
     _name = 'report.dev_print_cheque.cheque_report'
-
+    _description = 'Report Print Cheque'
+    
     def get_date(self, date):
         date = date.split('-')
         return date

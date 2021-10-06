@@ -12,7 +12,7 @@
                 <button string="Approve by Director" name="get_apprv_director" states="approved_hr_manager" type="object" groups="employee_advance_salary.group_director_manager_for_salary_id" class="oe_highlight"/>
                 <button string="Pay" name="get_apprv_account" states="approved_director" type="object" groups="account.group_account_user" class="oe_highlight"/>
                 <button string="Done" class="oe_highlight" name="get_done" states="paid" type="object" groups="hr.group_hr_user"/>
-                <button string="Reject" name="get_reject" states="confirm,approved_dept_manager,approved_hr_manager" type="object" groups="hr.group_hr_user,base.group_hr_manager,employee_advance_salary.group_department_manager_for_salary_id,employee_advance_salary.group_director_manager_for_salary_id"/>
+                <button string="Reject" name="get_reject" states="confirm,approved_dept_manager,approved_hr_manager" type="object" groups="hr.group_hr_user,hr.group_hr_manager,employee_advance_salary.group_department_manager_for_salary_id,employee_advance_salary.group_director_manager_for_salary_id"/>
                 <button string="Cancel" name="exit_cancel" states="draft" type="object"/>
                 <button string="Set To Draft" name="request_set" states="reject" type="object"/>
                 <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approved_dept_manager,approved_hr_manager,approved_director,paid,done" colspan="2"/>

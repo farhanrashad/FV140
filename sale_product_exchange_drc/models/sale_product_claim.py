@@ -335,9 +335,10 @@ class ProductSaleClaim(models.Model):
 
 class ProductSaleClaimLine(models.Model):
     _name = 'sale.claim.line'
+    _description = 'Sale Claim Line'
 
     product_id = fields.Many2one('product.product', string='Product', readonly=True)
-    uom_id = fields.Many2one('product.uom', string='UOM', readonly=True)
+    uom_id = fields.Many2one('uom.uom', string='UOM', readonly=True)
     claim_id = fields.Many2one('sale.claim', string='Claim')
     ordered_qty = fields.Float('Ordered Quantity', readonly=True)
     return_qty = fields.Float('Return Quantity')

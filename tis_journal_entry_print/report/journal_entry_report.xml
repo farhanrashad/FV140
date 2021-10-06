@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<report 
-    	id="report_account_journal_entry"
-        string="Journal Entry"
-        model="account.move" 
-        report_type="qweb-pdf"
-        file="tis_journal_entry_print.report_journal_entry_document" 
-        name="tis_journal_entry_print.report_journal_entry_document" 
-	/>
+
+	<record id="report_account_journal_entry" model="ir.actions.report">
+        <field name="name">Journal Entry</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tis_journal_entry_print.report_journal_entry_document</field>
+    </record>
+<!--	<report -->
+<!--    	id="report_account_journal_entry"-->
+<!--        string="Journal Entry"-->
+<!--        model="account.move" -->
+<!--        report_type="qweb-pdf"-->
+<!--        file="tis_journal_entry_print.report_journal_entry_document" -->
+<!--        name="tis_journal_entry_print.report_journal_entry_document" -->
+<!--	/>-->
 	
 	<template id="report_journal_entry_document">
 		<t t-call="web.html_container">

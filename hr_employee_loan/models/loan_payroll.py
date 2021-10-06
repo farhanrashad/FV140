@@ -286,7 +286,7 @@ class LoanInstallmentDetail(models.Model):
         string='State', 
         readonly=True, 
         default='unpaid',
-        track_visibility='onchange',
+        tracking=True,
     )
     
     # @api.multi
@@ -743,8 +743,8 @@ class EmployeeLoanDetails(models.Model):
     )
     int_rate = fields.Float(
         compute='_get_loan_values', 
-        string='Rate', 
-        multi='type', 
+        string='Rate',
+        # multi='type',
         help='Interest rate between 0-100 in range', 
         digits=(16, 2), 
         store=True
@@ -1326,7 +1326,7 @@ class HrEmployee(models.Model):
         'employee_id', 
         string='Loans Details', 
         readonly=True, 
-        ondelete="cascade"
+        ondelete='cascade'
     )
 
 class HrSalaryRule(models.Model):

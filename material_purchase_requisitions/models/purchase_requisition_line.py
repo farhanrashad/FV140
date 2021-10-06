@@ -5,7 +5,8 @@ import odoo.addons.decimal_precision as dp
 
 class MaterialPurchaseRequisitionLine(models.Model):
     _name = "material.purchase.requisition.line"
-    
+    _description = 'Material Purchase Requisition Line'
+
     requisition_id = fields.Many2one(
         'material.purchase.requisition',
         string='Requisitions', 
@@ -29,7 +30,7 @@ class MaterialPurchaseRequisitionLine(models.Model):
         required=True,
     )
     uom = fields.Many2one(
-        'product.uom',
+        'uom.uom',
         string='Unit of Measure',
         required=True,
     )

@@ -234,6 +234,8 @@ class emp_payroll_statement(models.TransientModel):
         
 class emp_payroll_statement_excel(models.TransientModel):
     _name= "emp.payroll.statement.excel"
+    _description = 'Employee Payroll Statement Excel'
+
     excel_file = fields.Binary('Excel Report')
     file_name = fields.Char('Excel File', size=64)
 

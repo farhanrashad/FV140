@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        
-        <report
-            id="report_purchase_requisition"
-            model="material.purchase.requisition" 
-            string="Purchase Requisition" 
-            report_type="qweb-pdf"
-            name="material_purchase_requisitions.purchase_requisition" 
-            file="material_purchase_requisitions.purchase_requisition"
-        />
+<!--    <data>-->
+        <record id="report_purchase_requisition" model="ir.actions.report">
+            <field name="name">Purchase Requisition</field>
+            <field name="model">material.purchase.requisition</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">material_purchase_requisitions.purchase_requisition</field>
+        </record>
+<!--        <report-->
+<!--            id="report_purchase_requisition"-->
+<!--            model="material.purchase.requisition" -->
+<!--            string="Purchase Requisition" -->
+<!--            report_type="qweb-pdf"-->
+<!--            name="material_purchase_requisitions.purchase_requisition" -->
+<!--            file="material_purchase_requisitions.purchase_requisition"-->
+<!--        />-->
         
         <template id="purchase_requisition">
                <t t-foreach="docs" t-as="doc">
@@ -126,5 +131,5 @@
                </t>
         </template>
         
-  </data>
+<!--  </data>-->
 </odoo>

@@ -238,7 +238,7 @@
 				<graph string="Loan Installments" type="bar" orientation="horizontal">
 					<field name="employee_id" />
 					<field name="total" operator="+" />
-					<field name="state" group="True" />
+					<field name="state"/>
 				</graph>
 			</field>
 		</record>

@@ -16,7 +16,8 @@ from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 _logger = logging.getLogger(__name__)
 
 class VoucherHistory(models.Model):
-	_name = "voucher.history"
+	_name = 'voucher.history'
+	_description = 'Voucher History'
 	_order = 'create_date desc'
 
 	name = fields.Char('Voucher Name', size=100, required=True)
@@ -28,7 +29,7 @@ class VoucherHistory(models.Model):
 	user_id = fields.Many2one('res.partner', string='User')
 	transaction_type = fields.Selection([('debit', 'Debit'),('credit', 'Credit')], string="Transaction Type" ,help="transaction type , when a coupon is redeemed its transaction type will be debit , and for the first  ")
 	channel_used = fields.Selection([('pos', 'POS'),('ecommerce', 'Ecommerce'),('both', 'Both')], required=True, string="Channel" ,help="Channel by which voucher has been used.")
-	description = fields.Text(String="Description")
+	description = fields.Text(string="Description")
 	state = fields.Selection([
         ('draft','Draft'),
         ('done','Done'),

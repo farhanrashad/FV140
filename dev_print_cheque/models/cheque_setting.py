@@ -12,6 +12,7 @@ from odoo import models, fields, api
 
 class cheque_setting(models.Model):
     _name = 'cheque.setting'
+    _description = 'Cheque Setting'
 
     name = fields.Char('Name', required="1")
     font_size = fields.Float('Font Size', default="13", required="1")
@@ -20,13 +21,13 @@ class cheque_setting(models.Model):
     is_partner = fields.Boolean('Print Partner', default=True)
     is_partner_bold = fields.Boolean('Font Bold')
     partner_text = fields.Selection([('prefix', 'Prefix'), ('suffix', 'Suffix')], string='Partner Title')
-    partner_m_top = fields.Float('From Top', default=150)
-    partner_m_left = fields.Float('From Left', default=70)
+    partner_m_top = fields.Float('Partner From Top', default=150)
+    partner_m_left = fields.Float('Partner From Left', default=70)
 
     is_date = fields.Boolean('Print Date', default=True)
     date_formate = fields.Selection([('dd_mm', 'DD MM'), ('mm_dd', 'MM DD')], string='Date Formate', default='dd_mm')
     year_formate = fields.Selection([('yy', 'YY'), ('yyyy', 'YYYY')], string='Year Format', default='yy')
-    date_m_top = fields.Float('From Top', default=90)
+    date_m_top = fields.Float('Date From Top', default=90)
     f_d_m_left = fields.Float('First Digit', default=550)
     s_d_m_left = fields.Float('Second Digit', default=565)
     t_d_m_left = fields.Float('Third Digit', default=580)
@@ -39,8 +40,8 @@ class cheque_setting(models.Model):
     date_seprator = fields.Char('Seperator')
 
     is_amount = fields.Boolean('Print Amount', default=True)
-    amt_m_top = fields.Float('From Top', default=158.76)
-    amt_m_left = fields.Float('From Left', default=540)
+    amt_m_top = fields.Float('Amt From Top', default=158.76)
+    amt_m_left = fields.Float('Amt From Left', default=540)
     is_star = fields.Boolean('Print Star', help="if true then print 3 star before and after Amount", default=True)
 
     is_currency = fields.Boolean('Print Currency')
@@ -58,40 +59,40 @@ class cheque_setting(models.Model):
     amt_w_s_m_left = fields.Float('From Sec Left', default=45)
 
     is_company = fields.Boolean('Print Company')
-    c_margin_top = fields.Float('From Top', default=280)
-    c_margin_left = fields.Float('From Left', default=560)
+    c_margin_top = fields.Float('C From Top', default=280)
+    c_margin_left = fields.Float('C From Left', default=560)
 
     print_journal = fields.Boolean('Print Journal')
-    journal_margin_top = fields.Float('From Top', default=600)
-    journal_margin_left = fields.Float('From Left', default=45)
+    journal_margin_top = fields.Float('J From Top', default=600)
+    journal_margin_left = fields.Float('J From Left', default=45)
 
     is_stub = fields.Boolean('Print Stub')
     stub_margin_top = fields.Float('From Top', default=350)
     stub_margin_left = fields.Float('From Left', default=45)
 
     is_cheque_no = fields.Boolean('Print Cheque No')
-    cheque_margin_top = fields.Float('From Top', default=50)
-    cheque_margin_left = fields.Float('From Left', default=450)
+    cheque_margin_top = fields.Float('Cheque From Top', default=50)
+    cheque_margin_left = fields.Float('Cheque From Left', default=450)
 
     is_free_one = fields.Boolean('Print Free Text One')
-    f_one_margin_top = fields.Float('From Top', default=230)
-    f_one_margin_left = fields.Float('From Left', default=100)
+    f_one_margin_top = fields.Float('Fone From Top', default=230)
+    f_one_margin_left = fields.Float('Fone From Left', default=100)
 
     is_free_two = fields.Boolean('Print Free Text Two')
-    f_two_margin_top = fields.Float('From Top', default=500)
-    f_two_margin_left = fields.Float('From Left', default=100)
+    f_two_margin_top = fields.Float('PFTT From Top', default=500)
+    f_two_margin_left = fields.Float('PFTT From Left', default=100)
 
     is_acc_pay = fields.Boolean('Print A/C PAY', default=True)
-    acc_pay_m_top = fields.Float('From Top', default=90)
-    acc_pay_m_left = fields.Float('From Left', default=50)
+    acc_pay_m_top = fields.Float('A/C PAY From Top', default=90)
+    acc_pay_m_left = fields.Float('A/C PAY Pay From Left', default=50)
     
     is_f_line_sig = fields.Boolean('Print Signature')
-    f_sig_m_top = fields.Float('From Top', default=200)
-    f_sig_m_left = fields.Float('From Left', default=540)
+    f_sig_m_top = fields.Float('Fsig From Top', default=200)
+    f_sig_m_left = fields.Float('Fsig From Left', default=540)
     
     is_s_line_sig = fields.Boolean('Print Signature')
-    s_sig_m_top = fields.Float('From Top', default=300)
-    s_sig_m_left = fields.Float('From Left', default=540)
+    s_sig_m_top = fields.Float('Ssig From Top', default=300)
+    s_sig_m_left = fields.Float('Ssig From Left', default=540)
 
 
 

@@ -3,8 +3,8 @@
 
 import time
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning
+from . import models, fields, api, _
+from odoo.exceptions import UserError
 
 class EmployeeAdvanceSalary(models.Model):
     _name = 'employee.advance.salary'
@@ -38,7 +38,7 @@ class EmployeeAdvanceSalary(models.Model):
     
     department_id = fields.Many2one('hr.department', string='Department', readonly=True, states={'draft': [('readonly', False)]})
     job_id = fields.Many2one('hr.job', string='Job Title', readonly=True, states={'draft': [('readonly', False)]})
-    manager_id = fields.Many2one('hr.employee', string='Department Manager', readonly=True, states={'draft': [('readonly', False)]})
+    manager_id = fields.Many2one('hr.employee', string='Manager', readonly=True, states={'draft': [('readonly', False)]})
     request_amount = fields.Float(string='Request Amount', required=True, readonly=True, states={'draft': [('readonly', False)]})
     currency_id = fields.Many2one('res.currency', string='Currency', default=get_currency, required=True, readonly=True, states={'draft': [('readonly', False)]})
     comment = fields.Text(string='Comment')
@@ -56,7 +56,7 @@ class EmployeeAdvanceSalary(models.Model):
                         ('cancel', 'Cancelled'),\
                         ('reject', 'Rejected')],string='State', \
                         readonly=True, default='draft', \
-                        track_visibility='onchange')
+                        tracking=True)
     partner_id = fields.Many2one('res.partner', string='Employee Partner')
     journal_id = fields.Many2one('account.journal', string='Payment Method')
     payment_id = fields.Many2one('account.payment', string='Payment', readonly=True)
@@ -68,7 +68,7 @@ class EmployeeAdvanceSalary(models.Model):
             
     paid_amount = fields.Float(compute=_compute_payed_amount, string='Paid Amount', store=True, readonly=True)
     
-    @api.onchange('employee_id', 'employee_id.address_home_id')
+    @api.onchange('employee_id')
     def get_department(self):
         for line in self:
             line.department_id = line.employee_id.department_id.id
