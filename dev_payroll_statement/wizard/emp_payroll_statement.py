@@ -23,6 +23,7 @@ from odoo.exceptions import ValidationError
 
 class emp_payroll_statement(models.TransientModel):
     _name = "emp.payroll.statement"
+    _description = 'Employee Payroll Statement'
 
     start_date = fields.Date("Start Date", required="1")
     end_date = fields.Date("End Date", required="1")
