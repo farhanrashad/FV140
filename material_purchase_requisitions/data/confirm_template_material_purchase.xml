@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-   <data noupdate="1">
+<!--   <data noupdate="1">-->
    
         <record id="email_confirm_material_purchase_requistion" model="mail.template">
            <field name="name">Request for Material Purchase Requisition - Send by Email</field>
@@ -82,6 +82,6 @@
             </field>
         </record>
         
-    </data>
+<!--    </data>-->
 </odoo>
 

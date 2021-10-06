@@ -11,7 +11,7 @@ class PurchaseRequisition(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']      # odoo11
     _order = 'id desc'
     
-    @api.multi
+    # @api.multi
     def unlink(self):
         for rec in self:
             if rec.state not in ('draft', 'cancel', 'reject'):
@@ -33,7 +33,7 @@ class PurchaseRequisition(models.Model):
         ('cancel', 'Cancelled'),
         ('reject', 'Rejected')],
         default='draft',
-        track_visibility='onchange',
+        tracking=True,
     )
     request_date = fields.Date(
         string='Requisition Date',
@@ -174,7 +174,7 @@ class PurchaseRequisition(models.Model):
         string='Purchase Ordes',
     )
     
-    @api.model
+    # @api.model
     def create(self, vals):
         name = self.env['ir.sequence'].next_by_code('purchase.requisition.seq')
         vals.update({
@@ -183,7 +183,7 @@ class PurchaseRequisition(models.Model):
         res = super(PurchaseRequisition, self).create(vals)
         return res
         
-    @api.multi
+    # @api.multi
     def requisition_confirm(self):
         for rec in self:
             manager_mail_template = self.env.ref('material_purchase_requisitions.email_confirm_material_purchase_requistion')
@@ -193,14 +193,14 @@ class PurchaseRequisition(models.Model):
             if manager_mail_template:
                 manager_mail_template.send_mail(self.id)
             
-    @api.multi
+    # @api.multi
     def requisition_reject(self):
         for rec in self:
             rec.state = 'reject'
             rec.reject_employee_id = self.env['hr.employee'].search([('user_id', '=', self.env.uid)], limit=1)
             rec.userreject_date = fields.Date.today()
 
-    @api.multi
+    # @api.multi
     def manager_approve(self):
         for rec in self:
             rec.managerapp_date = fields.Date.today()
@@ -211,19 +211,19 @@ class PurchaseRequisition(models.Model):
             email_iruser_template.send_mail(self.id)
             rec.state = 'ir_approve'
 
-    @api.multi
+    # @api.multi
     def user_approve(self):
         for rec in self:
             rec.userrapp_date = fields.Date.today()
             rec.approve_employee_id = self.env['hr.employee'].search([('user_id', '=', self.env.uid)], limit=1)
             rec.state = 'approve'
 
-    @api.multi
+    # @api.multi
     def reset_draft(self):
         for rec in self:
             rec.state = 'draft'
 
-    @api.multi
+    # @api.multi
     def request_stock(self):
         stock_obj = self.env['stock.picking']
         move_obj = self.env['stock.move']
@@ -311,13 +311,13 @@ class PurchaseRequisition(models.Model):
                             purchase_line_obj.sudo().create(po_line_vals)
                 rec.state = 'stock'
     
-    @api.multi
+    # @api.multi
     def action_received(self):
         for rec in self:
             rec.receive_date = fields.Date.today()
             rec.state = 'receive'
     
-    @api.multi
+    # @api.multi
     def action_cancel(self):
         for rec in self:
             rec.state = 'cancel'
@@ -328,7 +328,7 @@ class PurchaseRequisition(models.Model):
             rec.department_id = rec.employee_id.department_id.id
             rec.dest_location_id = rec.employee_id.dest_location_id.id or rec.employee_id.department_id.dest_location_id.id 
             
-    @api.multi
+    # @api.multi
     def show_picking(self):
         for rec in self:
             res = self.env.ref('stock.action_picking_tree_all')
@@ -336,7 +336,7 @@ class PurchaseRequisition(models.Model):
             res['domain'] = str([('requisition_id','=',rec.id)])
         return res
         
-    @api.multi
+    # @api.multi
     def action_show_po(self):
         for rec in self:
             purchase_action = self.env.ref('purchase.purchase_rfq')
