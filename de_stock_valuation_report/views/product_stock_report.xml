@@ -22,6 +22,17 @@
         <field name="report_name">de_stock_valuation_report.de_stock_valuation_xlsx_report</field>
     </record>
 
+    <record id="action_stock_valuation_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Valuation</field>
+        <field name="res_model">product.stock.valuation.wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="stock_valuation_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_stock_valuation_salesprice_report" name="Stock Valuation(Sale Price)" parent="stock.menu_warehouse_report" action="action_stock_valuation_wizard" sequence="200"/>
+
 <!--    <menuitem id="menu_stock_valuation_salesprice_report" name="Stock Valuation(Sale Price)" parent="stock.menu_warehouse_report" action="action_stock_valuation_wizard" sequence="200" />-->
 <!--    <report id="stock_valuation_pdf"-->
 <!--            string="Stock Valuation"-->
