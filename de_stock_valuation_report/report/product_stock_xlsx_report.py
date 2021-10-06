@@ -6,6 +6,7 @@ from odoo.exceptions import UserError
 
 class PartnerXlsx(models.AbstractModel):
     _name = 'report.de_stock_valuation_report.de_stock_valuation_xlsx_report'
+    _description = 'Stock Valuation Xlsx Report'
 
     _inherit = 'report.report_xlsx.abstract'
     
