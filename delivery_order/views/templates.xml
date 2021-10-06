@@ -31,7 +31,7 @@
 					    <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
 						<t t-if="not o.move_line_ids">
 							<t t-foreach="o.move_line_ids" t-as="move">
-								<t t-set="total" t-value="move.ordered_qty+total"/>
+								<t t-set="total" t-value="total"/>
 							</t>
 						</t>
 						<t t-if="o.move_line_ids">
@@ -39,7 +39,7 @@
 								<t t-if="move_line.state == 'done'">
 									<t t-set="total_done" t-value="move_line.qty_done+total_done"/>
 								</t>
-								<t t-set="total_ordered" t-value="move_line.ordered_qty+total_ordered"/>
+								<t t-set="total_ordered" t-value="total_ordered"/>
 							</t>
 						</t>
 				    </t>
