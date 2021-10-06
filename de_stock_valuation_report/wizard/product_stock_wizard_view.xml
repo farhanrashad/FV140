@@ -35,7 +35,7 @@
                         </field>
                     </group>
                 <footer>
-                    <button name="print_report" type="object" string="Print" class="oe_highlight"/>
+                    <button name="action_print_report" type="object" string="Print" class="oe_highlight"/>
                     <button name="action_print_xlsx_report" type="object" string="XLS" class="oe_highlight"/>
                     <button string="Cancel" class="btn btn-default" special="cancel"/>
                 </footer>

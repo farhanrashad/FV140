@@ -52,18 +52,19 @@ class PosOrder(models.Model):
                                     timedelta(days=config_data['sh_last_no_days'])
                         last_date = last_date.strftime('%Y-%m-%d')
                         order_data = self.env['pos.order'].search_read(['|', ('user_id','=', self.env.user.id), ('assigned_config','=', config_data['id']), ('date_order','<=', (today_date + " 24:00:00")), ('date_order','>', (last_date + " 24:00:00")), ('state','!=', 'cancel')])
-        # order_line = []
-        # if order_data and len(order_data) > 0:
-        #     order_ids = []
-        #     for each_order in order_data:
-        #     	each_order['payment_data'] = []
-        #         if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
-        #             for each_payment in each_order.get('payment_ids'):
-        #                 payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)],['amount','payment_method_id'])
-        #                 if payment_obj and payment_obj[0]:
-        #                     each_order['payment_data'].append(payment_obj[0])
-        #         order_ids.append(each_order.get('id'))
-        #     order_line = self.env['pos.order.line'].search_read([('order_id','in', order_ids)])
+                    
+        order_line = []
+        if order_data and len(order_data) > 0:
+            order_ids = []
+            for each_order in order_data:
+            	each_order['payment_data'] = []
+                if each_order and each_order.get('payment_ids') and len(each_order.get('payment_ids')) > 0:
+                    for each_payment in each_order.get('payment_ids'):
+                        payment_obj = self.env['pos.payment'].search_read([('id','=',each_payment)],['amount','payment_method_id'])
+                        if payment_obj and payment_obj[0]:
+                            each_order['payment_data'].append(payment_obj[0])
+                order_ids.append(each_order.get('id'))
+            order_line = self.env['pos.order.line'].search_read([('order_id','in', order_ids)])
         return {'order': order_data}
         # return {'order': order_data, 'order_line': order_line}
 
