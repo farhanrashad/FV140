@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record id="action_stock_valuation_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Valuation</field>
+        <field name="res_model">product.stock.valuation.wizard</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_stock_valuation_salesprice_report" name="Stock Valuation(Sale Price)" parent="stock.menu_warehouse_report" action="action_stock_valuation_wizard" sequence="200" />
 
     <record id="stock_valuation_pdf" model="ir.actions.report">
         <field name="name">Stock Valuation</field>
