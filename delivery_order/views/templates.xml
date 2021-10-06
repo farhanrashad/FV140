@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <template id="delivery_order_report" inherit_id="stock.report_picking">
-                <xpath expr="//table[@class='table table-condensed'][2]"  position="after">
+                <xpath expr="//table"  position="after">
 					<table class="table table-condensed">
 						<t t-set="total_qty" t-value="0.0"/>
 						<t t-foreach="docs" t-as="o">
@@ -22,7 +22,7 @@
 				</xpath>
 		</template>
 		<template id="delivery_order_report_deliveryslip" inherit_id="stock.report_delivery_document">
-		    <xpath expr="//div[@class='page']/p[1]"  position="before">
+		    <xpath expr="//div"  position="before">
 				<table class="table table-condensed">
 				    <t t-set="total" t-value="0.0"/>
 					<t t-set="total_ordered" t-value="0.0"/>
