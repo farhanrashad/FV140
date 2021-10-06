@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields, api, _
+from . import models, fields, api, _
 
 class HrJob(models.Model):
     _inherit = 'hr.job'
