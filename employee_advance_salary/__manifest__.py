@@ -4,7 +4,7 @@
 
 {
     'name': 'Employee Advance Salary Requests',
-    'version': '1.0',
+    'version': '1.0.1',
     'price': 49.0,
     'currency': 'EUR',
     'license': 'Other proprietary',
