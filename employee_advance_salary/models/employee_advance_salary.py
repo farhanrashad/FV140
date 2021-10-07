@@ -1,10 +1,10 @@
 # #!/usr/bin/python
 # # -*- coding: utf-8 -*-
 #
-# import time
-#
-# from odoo import models, fields, api, _
-# from odoo.exceptions import UserError
+import time
+
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 #
 # class EmployeeAdvanceSalary(models.Model):
 #     _name = 'employee.advance.salary'
