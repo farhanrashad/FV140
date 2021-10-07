@@ -12,7 +12,7 @@ Stock Valuation Report on Date,
 """,
     'author': 'TidyWay',
     'website': 'http://www.tidyway.in',
-    'depends': ['base', 'stock', 'purchase'],
+    'depends': ['stock', 'purchase'],
     'data': [
         'security/stock_valuation_security.xml',
         'wizard/stock_valuation.xml',
