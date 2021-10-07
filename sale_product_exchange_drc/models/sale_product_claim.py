@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from openerp import api, fields, models
-from openerp.exceptions import except_orm
+from odoo import api, fields, models
+from odoo.exceptions import except_orm
 
 
 class ProductSaleClaim(models.Model):
