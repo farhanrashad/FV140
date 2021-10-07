@@ -35,7 +35,7 @@ class HRSalaryAdvance(models.Model):
                               ('approval3', 'Approved by Director'),
                               ('paid', 'Paid'),
                               ('cancel', 'Reject'),
-                              ('done', 'Done'),], string='Status', default='draft', track_visibility='onchange')
+                              ('done', 'Done'),], string='Status', default='draft', tracking=True)
     
     deductable = fields.Boolean(string='Deductable', default=True)
     partner_id = fields.Many2one('res.partner', 'Employee Partner', readonly=False, states={'paid': [('readonly', True)]},)
