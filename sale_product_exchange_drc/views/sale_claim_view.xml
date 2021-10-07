@@ -98,7 +98,7 @@
                                     <tree editable="bottom" create="false">
                                         <field name="product_id"/>
                                         <field name="ordered_qty"/>
-                                        <field name="uom_id" groups="product.group_uom"/>
+                                        <field name="uom_id" groups="uom.group_uom"/>
                                         <field name="return_qty"/>
                                         <field name="claim_desc"/>
                                     </tree>
