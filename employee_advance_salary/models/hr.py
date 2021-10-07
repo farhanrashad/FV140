@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from . import models, fields, api, _
+from odoo import models, fields, api, _
 
 class hr_employee(models.Model):
     _inherit = 'hr.employee'
