@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <data>-->
+<!--    <record id="report_loan_analysis" model="ir.actions.report">-->
+<!--        <field name="name">Print Loan</field>-->
+<!--        <field name="model">employee.loan.details</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">de_daily_stitched_report.production_report_pdf</field>-->
+<!--    </record>-->
+        <report id="report_loan_analysis" 
+                model="employee.loan.details" 
+                name="loan.details"
+                rml="ng_loan_payroll/report/loan_details.rml" 
+                string="Print Loan"
+                auto="True"/>
+<!--    </data>-->
+</odoo>
