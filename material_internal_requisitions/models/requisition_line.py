@@ -6,6 +6,7 @@ from odoo.addons import decimal_precision as dp       #    odoo11
 
 class RequisitionLine(models.Model):
     _name = "requisition.line"
+    _description = 'Requisition Line'
     
     requisition_id = fields.Many2one(
         'internal.requisition',

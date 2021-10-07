@@ -14,6 +14,7 @@ from datetime import datetime
 
 class StockValuationCategory(models.AbstractModel):
     _name = 'report.stock_valuation_on_date.stock_valuation_ondate_report'
+    _description = 'Stock Valuation OnDate Report'
 
     @api.model
     def get_report_values(self, docids, data=None):

@@ -19,6 +19,7 @@ class StockValuationDateReport(models.TransientModel,
                                StockValuationCategory):
     
     _name = 'stock.valuation.ondate.report'
+    _description = 'Stock Valuation Date Report'
 
     company_id = fields.Many2one('res.company', string='Company')
     warehouse_ids = fields.Many2many('stock.warehouse', string='warehouse')
@@ -603,6 +604,7 @@ class StockValuationDateReport(models.TransientModel,
 
 class StockValuationSuccessBox(models.TransientModel):
     _name = 'stock.valuation.success.box'
+    _description = 'Stock Valuation Success Box'
 
     file = fields.Binary('File', readonly=True)
     fname = fields.Char('Text')
