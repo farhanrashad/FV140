@@ -876,7 +876,7 @@ class EmployeeLoanDetails(models.Model):
         readonly=True, 
         copy=False, 
         default='draft',
-        track_visibility='onchange',
+        tracking=True,
     )
     notes = fields.Text(
         string='Note'
@@ -1326,7 +1326,7 @@ class HrEmployee(models.Model):
         'employee_id', 
         string='Loans Details', 
         readonly=True, 
-        ondelete='cascade'
+        # ondelete='cascade'
     )
 
 class HrSalaryRule(models.Model):
