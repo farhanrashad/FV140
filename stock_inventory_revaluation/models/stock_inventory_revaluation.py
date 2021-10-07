@@ -128,13 +128,13 @@ class StockInventoryRevaluation(models.Model):
     old_cost = fields.Float('Old cost',
                             help='Displays the previous cost of the '
                                  'product.',
-                            # digits=dp.get_precision('Product Price'),
+                            digits=('Product Price'),
                             readonly=True)
 
     current_cost = fields.Float('Current cost',
                                 help='Displays the current cost of the '
                                      'product.',
-                                # digits=dp.get_precision('Product Price'),
+                                digits=('Product Price'),
                                 compute="_compute_calc_current_cost",
                                 readonly=True)
 
@@ -142,20 +142,20 @@ class StockInventoryRevaluation(models.Model):
                             help="Enter the new cost you wish to assign to "
                                  "the product. Relevant only when the "
                                  "selected revaluation type is Price Change.",
-                            # digits=dp.get_precision('Product Price'),
+                            digits=('Product Price'),
                             states={'draft': [('readonly', False)]},
                             readonly=True)
 
     current_value = fields.Float('Current value',
                                  help='Displays the current value of the '
                                       'product.',
-                                 # digits=dp.get_precision('Account'),
+                                 digits=('Account'),
                                  compute="_compute_calc_product_value",
                                  readonly=True)
 
     old_value = fields.Float('Old value',
                              help='Displays the current value of the product.',
-                             # digits=dp.get_precision('Account'),
+                             digits=('Account'),
                              readonly=True)
 
     new_value = fields.Float('Credit/Debit amount',
@@ -164,11 +164,11 @@ class StockInventoryRevaluation(models.Model):
                                   "the item. Enter credit as a negative value."
                                   "Relevant only if the selected revaluation "
                                   "type is Inventory Credit/Debit.",
-                             # digits=dp.get_precision('Account'))
+                             digits=('Account')
 
     qty_available = fields.Float(
         'Quantity On Hand', compute='_compute_get_product_qty',
-        # digits=dp.get_precision('Product Unit of Measure'))
+        digits=('Product Unit of Measure'))
 
     increase_account_id = fields.Many2one(
         'account.account', 'Increase Account',
@@ -457,7 +457,7 @@ class StockInventoryRevaluationQuant(models.Model):
                             help="Enter the new cost you wish to assign to "
                                  "the Quant. Relevant only when the "
                                  "selected revaluation type is Price Change.",
-                            # digits=dp.get_precision('Product Price'),
+                            digits=('Product Price'),
                             copy=False)
 
     company_id = fields.Many2one(
