@@ -14,8 +14,7 @@ Restrict Site Access by IP Address.
 User can not login if he has not assigned IP address from where he is accessing Odoo.
         """,
     "license": "",
-    "depends": [
-    ],
+    "depends": ['base'],
     "demo": [],
     'data': [
         'security/ir.model.access.csv',
