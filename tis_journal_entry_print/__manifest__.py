@@ -10,7 +10,7 @@
     'price': 12,
     'currency': 'EUR',
     'license': 'Other proprietary',
-    'depends': [ 'account'],
+    'depends': ['account'],
     'data': ['report/journal_entry_report.xml',
     ],
     'demo': [],
