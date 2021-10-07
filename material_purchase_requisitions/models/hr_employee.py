@@ -7,7 +7,7 @@ class HrEmployee(models.Model):
 
     dest_location_id = fields.Many2one(
         'stock.location',
-        string='Location Dest',
+        string='Location Dests',
     )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
