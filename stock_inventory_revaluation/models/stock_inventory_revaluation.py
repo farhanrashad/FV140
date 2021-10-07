@@ -418,64 +418,64 @@ class StockInventoryRevaluation(models.Model):
         return True
 
 
-class StockInventoryRevaluationQuant(models.Model):
-
-    _name = 'stock.inventory.revaluation.quant'
-    _description = 'Inventory revaluation quant'
-
-    revaluation_id = fields.Many2one('stock.inventory.revaluation',
-                                     'Revaluation', required=True,
-                                     readonly=True)
-
-    quant_id = fields.Many2one('stock.quant', 'Quant', required=True,
-                               readonly=True, ondelete='cascade',
-                               domain=[('product_id.type', '=', 'product')])
-
-    product_id = fields.Many2one('product.product', 'Product',
-                                 readonly=True,
-                                 related="quant_id.product_id")
-
-    location_id = fields.Many2one('stock.location', 'Location',
-                                  readonly=True,
-                                  related="quant_id.location_id")
-
-    qty = fields.Float('Quantity', readonly=True,
-                       related="quant_id.quantity")
-
-    in_date = fields.Datetime('Incoming Date', readonly=True,
-                              related="quant_id.in_date")
-
-    current_cost = fields.Float('Current Cost',
-                                readonly=True,
-                                )#related="quant_id.cost"
-
-    old_cost = fields.Float('Previous cost',
-                            help='Shows the previous cost of the quant',
-                            readonly=True)
-
-    new_cost = fields.Float('New Cost',
-                            help="Enter the new cost you wish to assign to "
-                                 "the Quant. Relevant only when the "
-                                 "selected revaluation type is Price Change.",
-                            digits=('Product Price'),
-                            copy=False)
-
-    company_id = fields.Many2one(
-        comodel_name='res.company', string='Company', readonly=True,
-        related="revaluation_id.company_id")
-
-    @api.model
-    def get_total_value(self):
-        amount_diff = 0.0
-        if self.product_id.cost_method == 'real':
-            if self.revaluation_id.revaluation_type != 'price_change':
-                raise UserError(_("You can only post quant cost changes."))
-            else:
-                diff = self.old_cost - self.new_cost
-            amount_diff = self.qty * diff
-        return amount_diff
-
-    @api.model
-    def _write_new_cost(self):
-        self.quant_id.sudo().write({'cost': self.new_cost})
-        return True
+# class StockInventoryRevaluationQuant(models.Model):
+#
+#     _name = 'stock.inventory.revaluation.quant'
+#     _description = 'Inventory revaluation quant'
+#
+#     revaluation_id = fields.Many2one('stock.inventory.revaluation',
+#                                      'Revaluation', required=True,
+#                                      readonly=True)
+#
+#     quant_id = fields.Many2one('stock.quant', 'Quant', required=True,
+#                                readonly=True, ondelete='cascade',
+#                                domain=[('product_id.type', '=', 'product')])
+#
+#     product_id = fields.Many2one('product.product', 'Product',
+#                                  readonly=True,
+#                                  related="quant_id.product_id")
+#
+#     location_id = fields.Many2one('stock.location', 'Location',
+#                                   readonly=True,
+#                                   related="quant_id.location_id")
+#
+#     qty = fields.Float('Quantity', readonly=True,
+#                        related="quant_id.quantity")
+#
+#     in_date = fields.Datetime('Incoming Date', readonly=True,
+#                               related="quant_id.in_date")
+#
+#     current_cost = fields.Float('Current Cost',
+#                                 readonly=True,
+#                                 )#related="quant_id.cost"
+#
+#     old_cost = fields.Float('Previous cost',
+#                             help='Shows the previous cost of the quant',
+#                             readonly=True)
+#
+#     new_cost = fields.Float('New Cost',
+#                             help="Enter the new cost you wish to assign to "
+#                                  "the Quant. Relevant only when the "
+#                                  "selected revaluation type is Price Change.",
+#                             digits=('Product Price'),
+#                             copy=False)
+#
+#     company_id = fields.Many2one(
+#         comodel_name='res.company', string='Company', readonly=True,
+#         related="revaluation_id.company_id")
+#
+#     @api.model
+#     def get_total_value(self):
+#         amount_diff = 0.0
+#         if self.product_id.cost_method == 'real':
+#             if self.revaluation_id.revaluation_type != 'price_change':
+#                 raise UserError(_("You can only post quant cost changes."))
+#             else:
+#                 diff = self.old_cost - self.new_cost
+#             amount_diff = self.qty * diff
+#         return amount_diff
+#
+#     @api.model
+#     def _write_new_cost(self):
+#         self.quant_id.sudo().write({'cost': self.new_cost})
+#         return True
