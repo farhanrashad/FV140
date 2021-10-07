@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_users_from_sales_summary,access_res_users_from_sales_summary,base.model_res_users,,1,1,1,1
+access_wizard_pos_sale_report,access.wizard.pos.sale.report,model_wizard_pos_sale_report,base.group_user,1,1,1,1
+access_wizard_pos_session_report,access.wizard.pos.session.report,model_wizard_pos_session_report,base.group_user,1,1,1,1
+access_wizard_pos_x_report,access.wizard.pos.x.report,model_wizard_pos_x_report,base.group_user,1,1,1,1
+access_wizard_sales_details,access.wizard.sales.details,model_wizard_sales_details,base.group_user,1,1,1,1
