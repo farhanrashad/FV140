@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="action_stock_valuation_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Stock Valuation</field>-->
+<!--        <field name="res_model">product.stock.valuation.wizard</field>-->
+<!--&lt;!&ndash;        <field name="view_type">form</field>&ndash;&gt;-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+
+    <record id="stock_valuation_pdf" model="ir.actions.report">
+        <field name="name">Stock Valuation</field>
+        <field name="model">product.stock.valuation.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">de_stock_valuation_report.de_stock_valuation_pdf_report</field>
+    </record>
+
+    <record id="stock_valuation_xlsx" model="ir.actions.report">
+        <field name="name">Stock Valuation XLSX</field>
+        <field name="model">product.stock.valuation.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">de_stock_valuation_report.de_stock_valuation_xlsx_report</field>
+    </record>
+
+    <record id="action_stock_valuation_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Valuation</field>
+        <field name="res_model">product.stock.valuation.wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="stock_valuation_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_stock_valuation_salesprice_report" name="Stock Valuation(Sale Price)" parent="stock.menu_warehouse_report" action="action_stock_valuation_wizard" sequence="200"/>
+
+<!--    <menuitem id="menu_stock_valuation_salesprice_report" name="Stock Valuation(Sale Price)" parent="stock.menu_warehouse_report" action="action_stock_valuation_wizard" sequence="200" />-->
+<!--    <report id="stock_valuation_pdf"-->
+<!--            string="Stock Valuation"-->
+<!--            model="product.stock.valuation.wizard"-->
+<!--            report_type="qweb-pdf"-->
+<!--            file="de_stock_valuation_report.de_stock_valuation_pdf_report"-->
+<!--            name="de_stock_valuation_report.de_stock_valuation_pdf_report" />-->
+<!--    -->
+<!--    <report id="stock_valuation_xlsx"-->
+<!--            string="Stock Valuation XLSX"-->
+<!--            model="product.stock.valuation.wizard"-->
+<!--            report_type="xlsx"-->
+<!--            file="Stock Valuation XLSX"-->
+<!--            name="de_stock_valuation_report.de_stock_valuation_xlsx_report"-->
+<!--            />-->
+    
+</odoo>
