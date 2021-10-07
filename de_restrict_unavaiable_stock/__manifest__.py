@@ -7,7 +7,7 @@
     'category' : '',
     'summary': 'This module would restrict user to validate stock if stock is not avaibale',
     'description': """This module would restrict user to validate stock if stock is not avaibale""",
-    'depends':['stock'],
+    'depends':['base','stock'],
     'data' : [],
     'installable':True,
     'auto_install':False
