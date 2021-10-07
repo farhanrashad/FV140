@@ -14,6 +14,7 @@ Stock Valuation Report on Date,
     'website': 'http://www.tidyway.in',
     'depends': ['stock', 'purchase'],
     'data': [
+        'security/ir.model.access.csv',
         'security/stock_valuation_security.xml',
         'wizard/stock_valuation.xml',
         'views/stock_valuation_menu.xml',
