@@ -17,9 +17,9 @@ class RequisitionLine(models.Model):
         string='Product',
         required=True,
     )
-    layout_category_id = fields.Many2one(
-        string='Section',
-    )
+    # layout_category_id = fields.Many2one(
+    #     string='Section',
+    # )
     description = fields.Char(
         string='Description',
         required=True,
