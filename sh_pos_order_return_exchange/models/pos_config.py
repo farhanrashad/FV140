@@ -209,14 +209,14 @@ class PosOrder(models.Model):
 
         for each in self:
             return_order = self.search_read(
-                [('old_pos_reference', '=', each.pos_reference), ('is_return_order', '=', True)])
+                [('old_pos_reference','=', each.pos_reference), ('is_return_order','=', True)])
             each.total_return_order = len(return_order)
 
     def _exchange_order_total(self):
 
         for each in self:
             exchange_order = self.search_read(
-                [('old_pos_reference', '=', each.pos_reference), ('is_exchange_order', '=', True)])
+                [('old_pos_reference','=', each.pos_reference), ('is_exchange_order','=', True)])
             each.total_exchange_order = len(exchange_order)
 #
 
@@ -233,16 +233,16 @@ class PosOrder(models.Model):
         if ui_order.get('is_return_order'):
             flag = True
             parent_order = self.search(
-                [('pos_reference', '=', ui_order['old_pos_reference'])], limit=1)
+                [('pos_reference','=', ui_order['old_pos_reference'])], limit=1)
             updated_lines = ui_order['lines']
 
             for uptd in updated_lines:
                 if uptd[2].get('line_id'):
-                    line = self.env['pos.order.line'].search([('order_id', '=', parent_order.id),
+                    line = self.env['pos.order.line'].search([('order_id','=', parent_order.id),
                                                               ('id', '=', uptd[2]['line_id'])], limit=1)
                     if not line:
                         line = self.env['pos.order.line'].search(
-                            [('order_id', '=', parent_order.id), ('sh_line_id', '=', uptd[2]['old_line_id'])], limit=1)
+                            [('order_id','=', parent_order.id), ('sh_line_id','=', uptd[2]['old_line_id'])], limit=1)
                     if line:
                         line.sh_return_qty += -(uptd[2]['qty'])
             if parent_order.lines:
@@ -259,15 +259,15 @@ class PosOrder(models.Model):
         if ui_order.get('is_exchange_order'):
             flag = True
             parent_order = self.search(
-                [('pos_reference', '=', ui_order['old_pos_reference'])], limit=1)
+                [('pos_reference','=', ui_order['old_pos_reference'])], limit=1)
             updated_lines = ui_order['lines']
             for uptd in updated_lines:
                 if uptd[2].get('line_id'):
-                    line = self.env['pos.order.line'].search([('order_id', '=', parent_order.id),
-                                                              ('id', '=', uptd[2]['line_id'])], limit=1)
+                    line = self.env['pos.order.line'].search([('order_id','=', parent_order.id),
+                                                              ('id','=', uptd[2]['line_id'])], limit=1)
                     if not line:
                         line = self.env['pos.order.line'].search(
-                            [('order_id', '=', parent_order.id), ('sh_line_id', '=', uptd[2]['old_line_id'])], limit=1)
+                            [('order_id','=', parent_order.id), ('sh_line_id','=', uptd[2]['old_line_id'])], limit=1)
                     if line:
                         line.sh_return_qty += -(uptd[2]['qty'])
             if parent_order.lines:
@@ -312,7 +312,7 @@ class PosOrder(models.Model):
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'tree,form',
-            'domain': [('old_pos_reference', '=', self.pos_reference), ('is_return_order', '=', True)],
+            'domain': [('old_pos_reference','=', self.pos_reference), ('is_return_order','=', True)],
             'res_model': 'pos.order',
             'target': 'current',
         }
@@ -323,7 +323,7 @@ class PosOrder(models.Model):
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'tree,form',
-            'domain': [('old_pos_reference', '=', self.pos_reference), ('is_exchange_order', '=', True)],
+            'domain': [('old_pos_reference','=', self.pos_reference), ('is_exchange_order','=', True)],
             'res_model': 'pos.order',
             'target': 'current',
         }
