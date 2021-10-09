@@ -876,7 +876,7 @@ class EmployeeLoanDetails(models.Model):
         readonly=True, 
         copy=False, 
         default='draft',
-        track_visibility='onchange',
+        tracking=True,
     )
     notes = fields.Text(
         string='Note'
