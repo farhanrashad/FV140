@@ -1326,7 +1326,7 @@ class HrEmployee(models.Model):
         'employee_id', 
         string='Loans Details', 
         readonly=True, 
-        ondelete='cascade'
+        # ondelete='cascade'
     )
 
 class HrSalaryRule(models.Model):
