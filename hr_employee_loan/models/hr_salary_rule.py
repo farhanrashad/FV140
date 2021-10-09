@@ -5,7 +5,7 @@ from odoo import models, fields
 class HrSalaryRule(models.Model):
     _inherit = 'hr.salary.rule'
 
-    struct_id = fields.Many2one('hr.payroll.structure', string="Salary Structure")
+    struct_id = fields.Many2one('hr.payroll.structure', string="Salary Structure", required=True, ondelete='cascade')
     is_loan_payment = fields.Boolean(
         string='Loan Payment',
     )
